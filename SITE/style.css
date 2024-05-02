@@ -56,7 +56,7 @@ body {
    padding: 40px 20px 30px 10px;
    color: #fff;
    height: 400px;
-   background-image: url('../SITE/tocida1.jpg');
+   background-image: url('../SITE/timao.PNG');
    background-repeat: no-repeat;
    background-size: cover;
 }
@@ -73,34 +73,81 @@ body {
    color: black;
 }
 
-.banner .container span {
-   color: #32b9cd;
-   font-weight: bold;
-}
-
 .social {
-   background-color: #222222;
    color: white;
    padding: 40px 0;
-   flex-direction: row;
 }
 
 .social .container {
-   flex-direction: column;
+   justify-content: space-around;
+   background-color: #222222;
+   margin-bottom: 4%;
 }
 
 .card {
-   width: 150px;
-   align-items: normal;
-   flex-direction: column;
+   width: 400px;
+   text-align: center;
 }
 
 .card img {
-   width: 100%;
+   width: 200px;
+   border: 1px solid #222222;
+   border-radius: 10%;
+   height: 200px;
 }
 
 .card h4 {
    font-size: 24px;
+}
+
+.container2 {
+   background-image: url(../SITE/invasao.jpg);
+   color: black;
+   align-items: center;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+}
+
+.bloco {
+   width: 500px;
+   background-color: #222222;
+   padding: 40px;
+   margin: 5%;
+   align-items: center;
+   text-align: center;
+   justify-content: space-between;
+   display: flex;
+   flex-direction: column;
+}
+
+.bloco h3 {
+   color: white;
+}
+
+.bloco img {
+   width: 50%;
+}
+
+.social .container2 button {
+   height: 50px;
+   width: 250px;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: large;
+   background-color: #222222;
+   color: white;
+   border-radius: 25px;
+}
+
+.social .container2 button:hover {
+   background-color: white;
+   color: black;
+}
+
+.social .container2 p {
+   font-size: large;
+   color: white;
+   font-family: 'Courier New', Courier, monospace;
 }
 
 .footer {
@@ -141,10 +188,10 @@ body {
    margin-right: 230px;
 }
 
-.navbar li:hover{
+.navbar li:hover {
    color: red;
 }
 
-.navbar .login li:hover{
+.navbar .login li:hover {
    color: red;
 }
