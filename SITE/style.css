@@ -2,6 +2,11 @@
    padding: 0;
 }
 
+@font-face {
+   font-family: 'corinthians';
+   src: url(../SITE/CORINTHIANS/FONT-CORINTHIANS-2023.otf);
+}
+
 body {
    margin: 0;
    padding: 0;
@@ -10,17 +15,24 @@ body {
    color: beige;
 }
 
+h1{
+   margin: 0%;
+   margin-right: 0%;
+}
+
 .header {
    width: 90%;
    margin: auto;
    justify-content: space-between;
    display: flex;
+   padding: 0%;
 }
 
 .container {
    display: flex;
    width: 100%;
    margin: 0 auto;
+   flex-direction: row;
    justify-content: space-between;
 }
 
@@ -31,32 +43,30 @@ body {
    justify-content: space-between;
 }
 
-.header .container {
-   justify-content: space-between;
-
-}
-
 .titulo {
    color: white;
    font-weight: lighter;
-   margin-left: 0;
+   font-family: 'corinthians';
+   display: flex;
 }
 
 .navbar {
-   width: 600px;
+   width: 70%;
    display: flex;
    flex-direction: row;
    list-style: none;
    justify-content: space-between;
    color: white;
    align-items: center;
+   font-family: 'corinthians';
+   font-weight: lighter;
+   font-size: large;
 }
 
 .banner {
-   padding: 40px 20px 30px 10px;
    color: #fff;
    height: 400px;
-   background-image: url('../SITE/home.jfif');
+   background-image: url('../SITE/banner.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
@@ -82,22 +92,24 @@ body {
    justify-content: space-around;
    background-color: #222222;
    margin-bottom: 4%;
+   display: flex;
+   flex-direction: column;
 }
 
 .card {
-   width: 400px;
-   text-align: center;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
 }
 
 .card img {
-   width: 200px;
+   width: 25%;
    border: 1px solid #222222;
-   border-radius: 10%;
-   height: 200px;
+   margin: 5px;
 }
 
-.card h4 {
-   font-size: 24px;
+.card h1 {
+   font-family: 'corinthians';
 }
 
 .container2 {
@@ -111,9 +123,7 @@ body {
 .bloco {
    padding: 40px;
    margin: 5%;
-   align-items: flex-start;
    text-align: justify;
-   justify-content: space-between;
    display: flex;
    flex-direction: column;
    margin-right: 55%;
@@ -183,8 +193,7 @@ body {
 .header .container .titulo {
    display: flex;
    align-items: center;
-   justify-content: space-around;
-   margin-right: 230px;
+   justify-content: space-between;
 }
 
 .navbar li:hover {
@@ -198,4 +207,82 @@ body {
 
 .navbar a:hover{
    color: red;
+}
+
+section.slider{
+   margin: 0;
+   width: 65%;
+   height: auto;
+   padding: 0 !important;
+   overflow: hidden;
+}
+
+.slider-content{
+   width: 400%;
+   height: auto;
+   display: flex;
+}
+
+.slider-content input{
+   display: none;
+}
+
+.slide-box{
+   width: 25%;
+   height: auto;
+   position: relative;
+   text-align: center;
+   transition: 1s;
+}
+
+.slide-box img{
+   width: 100%;
+}
+
+.nav-manual{
+   position: absolute;
+   width: 100%;
+   margin-top: 35%;
+   display: flex;
+   justify-content: center;
+}
+
+.nav-manual .manual-btn, .nav-auto div{
+   border: 1px solid black;
+   padding: 10px;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: 0.2s;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+   margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover{
+   background-color: black;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1{
+   background-color: black;
+}
+
+#radio2:checked ~ .nav-auto .auto-btn2{
+   background-color: black;
+}
+
+#radio3:checked ~ .nav-auto .auto-btn3{
+   background-color: black;
+}
+
+#radio1:checked ~ .primeiro{
+   margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro{
+   margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro{
+   margin-left: -50%;
 }
