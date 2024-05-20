@@ -34,47 +34,101 @@
 
     <div class="social">
         <div class="container">
+            <div class="card">
+                <section class="slider">
+                    <div class="slider-content">
 
-            <section class="slider">
-                <div class="slider-content">
+                        <input type="radio" name="btn-radio" id="radio1">
+                        <input type="radio" name="btn-radio" id="radio2">
+                        <input type="radio" name="btn-radio" id="radio3">
 
-                    <input type="radio" name="btn-radio" id="radio1">
-                    <input type="radio" name="btn-radio" id="radio2">
-                    <input type="radio" name="btn-radio" id="radio3">
+                        <div class="slide-box primeiro">
+                            <img src="../SITE/importancia/demo.png" alt="slide 1">
+                        </div>
 
-                    <div class="slide-box primeiro">
-                        <img src="../SITE/importancia/democracia_corinthiana.jpg" alt="slide 1">
+                        <div class="slide-box">
+                            <img src="../SITE/importancia/dia15.jpeg" alt="slide 2">
+                        </div>
+
+                        <div class="slide-box">
+                            <img src="../SITE/importancia/comemoracao.png" alt="slide 3">
+                        </div>
+
+                        <div class="nav-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                        </div>
+
+                        <div class="nav-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                        </div>
+
                     </div>
+                </section>
 
-                    <div class="slide-box">
-                        <img src="../SITE/importancia/dia15.jpeg" alt="slide 2">
-                    </div>
-
-                    <div class="slide-box">
-                        <img src="../SITE/importancia/resistenciacomemoracao.webp" alt="slide 3">
-                    </div>
-
-                    <div class="nav-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                    </div>
-                    
-                    <div class="nav-manual">
-                        <label for="radio1" class="manual-btn"></label>
-                        <label for="radio2" class="manual-btn"></label>
-                        <label for="radio3" class="manual-btn"></label>
-                    </div>
-
+                <div class="text">
+                    <h1>Importancia</h1>
+                    <p><span>Na década</span> de 80, o Brasil passava pelo regime militar, até que jogadores do
+                        Corinthians decidiram por abolir o cargo de técnico do time, e a partir disso, tomarem suas
+                        próprias decisões.<br><br>
+                        <span>Esta exeperiência</span> inovadora não apenas elevou o desempenho esportivo do clube, mas
+                        também inspirou debates sobre democracia, liberdade de expressão e justiça social em toda a
+                        sociedade brasileira.<br><br>
+                        <span>A democracia</span> corinthiana foi além das quatro linhas do campo, levantando questões
+                        políticas e sociais importantes e dando voz a uma geração de jogadores que buscavam mais do que
+                        simplesmente a vitória nos jogos.<br><br>
+                        <span>A camisa</span> do Corinthians é pesada, carrega uma luta incessante pelo direito de uma
+                        população. A democracia e o direito de voto, do campo para o Senado.
+                    </p>
                 </div>
-            </section>
+            </div>
+
+
 
             <div class="card">
-                <img src="../SITE/fundacao.jpg" alt="">
-                <h1>História</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, veritatis minima accusantium,
-                    praesentium consequuntur laborum eaque est omnis repellendus voluptate earum laboriosam facere amet
-                    hic eum. Nisi quas itaque quidem.</p>
+                <section class="slider">
+                    <div class="slider-content">
+
+                        <input type="radio" name="btn-radio" id="radio1">
+                        <input type="radio" name="btn-radio" id="radio2">
+                        <input type="radio" name="btn-radio" id="radio3">
+
+                        <div class="slide-box primeiro">
+                            <img src="../SITE/importancia/demo.png" alt="slide 1">
+                        </div>
+
+                        <div class="slide-box">
+                            <img src="../SITE/importancia/dia15.jpeg" alt="slide 2">
+                        </div>
+
+                        <div class="slide-box">
+                            <img src="../SITE/importancia/comemoracao.png" alt="slide 3">
+                        </div>
+
+                        <div class="nav-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                        </div>
+
+                        <div class="nav-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="text">
+                    <h1>Historia</h1>
+                    <p>Fundado em 1910, o Corinthians é uma parte essencial da cultura brasileira, com uma história rica e uma torcida apaixonada. Além de suas conquistas esportivas, como múltiplos títulos nacionais e internacionais, o clube também é conhecido pela democracia corinthiana, um movimento revolucionário dos anos 80 que influenciou não só o esporte, mas também questões sociais e políticas. <br><br>
+                    Porém somente em 2012, clube veio a conquistar seus 2 principais títulos (Libertadores e Mundial), surgindo com novos ídolos e figuras importantes na história do clube.
+                    </p>
+                </div>
             </div>
 
             <div class="card">
@@ -126,10 +180,10 @@
         proximaImg()
     }, 5000)
 
-    function proximaImg(){
+    function proximaImg() {
         cont++;
 
-        if(cont > 3){
+        if (cont > 3) {
             cont = 1;
         }
 
