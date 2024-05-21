@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CORINTHIANS | Página Inicial</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
     <div class="header">
         <div class="container">
-            <img src="../SITE/simboloc.png">
+            <img src="../public/IMG/simboloc.png">
             <h1 class="titulo">BLOG SCCP</h1>
             <ul class="navbar">
                 <li class="agora">Home</li>
@@ -43,15 +43,15 @@
                         <input type="radio" name="btn-radio" id="radio3">
 
                         <div class="slide-box primeiro">
-                            <img src="../SITE/importancia/demo.png" alt="slide 1">
+                            <img src="../public/importancia/demo.png" alt="slide 1">
                         </div>
 
                         <div class="slide-box">
-                            <img src="../SITE/importancia/dia15.jpeg" alt="slide 2">
+                            <img src="../public/importancia/dia15.jpeg" alt="slide 2">
                         </div>
 
                         <div class="slide-box">
-                            <img src="../SITE/importancia/comemoracao.png" alt="slide 3">
+                            <img src="../public/importancia/comemoracao.png" alt="slide 3">
                         </div>
 
                         <div class="nav-auto">
@@ -113,31 +113,31 @@
                         <input type="radio" name="btn-radio2" id="radio10">
 
                         <div class="slide-box2 segundo">
-                            <img src="../SITE/historia/velha.jpg" alt="slide 4">
+                            <img src="../public/historia/velha.jpg" alt="slide 4">
                         </div>
 
                         <div class="slide-box2">
-                            <img src="../SITE/historia/neto.jpg" alt="slide 5">
+                            <img src="../public/historia/neto.jpg" alt="slide 5">
                         </div>
 
                         <div class="slide-box2">
-                            <img src="../SITE/historia/2000.jpg" alt="slide 6">
+                            <img src="../public/historia/2000.jpg" alt="slide 6">
                         </div>
 
                         <div class="slide-box2">
-                            <img src="../SITE/historia/romarinho.jpg" alt="slide 7">
+                            <img src="../public/historia/romarinho.jpg" alt="slide 7">
                         </div>
 
                         <div class="slide-box2">
-                            <img src="../SITE/historia/liberta.jpg" alt="slide 8">
+                            <img src="../public/historia/liberta.jpg" alt="slide 8">
                         </div>
 
                         <div class="slide-box2">
-                            <img src="../SITE/historia/cassio.jpg" alt="slide 9">
+                            <img src="../public/historia/cassio.jpg" alt="slide 9">
                         </div>
 
                         <div class="slide-box2">
-                            <img src="../SITE/historia/2017.jpg" alt="slide 10">
+                            <img src="../public/historia/2017.jpg" alt="slide 10">
                         </div>
 
                     </div>
@@ -204,24 +204,3 @@
 </body>
 
 </html>
-
-<script>
-    var radio = document.querySelector('.manual-btn');
-    var cont = 1;
-
-    document.getElementById('radio1').checked = true;
-
-    setInterval(() => {
-        proximaImg()
-    }, 5000)
-
-    function proximaImg() {
-        cont++;
-
-        if (cont > 3) {
-            cont = 1;
-        }
-
-        document.getElementById('radio' + cont).checked = true;
-    }
-</script>

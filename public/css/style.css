@@ -4,7 +4,7 @@
 
 @font-face {
    font-family: 'corinthians';
-   src: url(../SITE/CORINTHIANS/FONT-CORINTHIANS-2023.otf);
+   src: url(../CORINTHIANS/FONT-CORINTHIANS-2023.otf);
 }
 
 body {
@@ -66,7 +66,7 @@ h1 {
 .banner {
    color: #fff;
    height: 400px;
-   background-image: url('../SITE/banner.png');
+   background-image: url('../IMG/banner.png');
    background-repeat: no-repeat;
    background-size: cover;
 }

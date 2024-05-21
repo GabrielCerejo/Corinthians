@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BLOG SCCP | Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/style-cadastro.css" />
+  <link rel="icon" href="../public/IMG/simboloc.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body onload="listar()">
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../public/IMG/simboloc.png">
+      <h1 class="titulo">BLOG SCCP</h1>
+      <ul class="navbar">
+        <a href="index.html" class="home">Home</a>
+        <li>Importância</li>
+        <li>Historia</li>
+        <li>Ídolos</li>
+        <li>Interativo</li>
+        <li>|</li>
+        <li>
+          <a href="login.html" class="login">Login</a>
+        </li>
+        <li>
+          <a href="cadastro.html" class="cadastrar">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--header fim-->
+  <!--
+                         Para inserir mais um campo, copie uma das inputs abaixo.
+                         Assim que inserir vá para o script abaixo.
+                     -->
+  <div class="container2">
+    <div class="cadastro">
+      <div class="card">
+        <h2>Cadastre-se</h2>
+        <div class="formulario">
+          <div class="campo">
+            <input type="text" id="nome_input" placeholder="Nome">
+            <input type="email" id="email_input" placeholder="E-mail">
+            <input type="password" id="senha_input" placeholder="Senha">
+          </div>
+          <div class="campo">
+            <input type="text" id="cpf_input" placeholder="CPF">
+            <input type="text" id="telefone_input" placeholder="Telefone">
+            <input type="password" id="confirmacao_senha_input" placeholder="Confirmar Senha">
+          </div>
+        </div>
+        <div class="botao">
+          <button onclick="cadastrar()">Cadastrar</button>
+          <button onclick="window.location.reload()">Limpar</button>
+        </div>
+
+        <div id="div_mensagem"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--footer inicio-->
+
+  <!--footer fim-->
+</body>
+
+</html>
+
+<script>
+  function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var cpfVar = cpf_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var telefoneVar = telefone_input.value
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      cpfVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" ||
+      telefoneVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        cpfServer: cpfVar,
+        senhaServer: senhaVar,
+        telefoneServer: telefoneVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>
