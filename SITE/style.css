@@ -309,3 +309,121 @@ section .textalt{
 #radio3:checked~.primeiro {
    margin-left: -50%;
 }
+
+section.slider2 {
+   margin: 0;
+   width: 65%;
+   height: auto;
+   padding: 0 !important;
+   overflow: hidden;
+}
+
+section .textalt{
+   text-align: justify;
+   width: 100%;
+   padding: 15px;
+}
+
+.slider-content2 {
+   width: 400%;
+   height: auto;
+   display: flex;
+}
+
+.slider-content2 input {
+   display: none;
+}
+
+.slide-box2 {
+   width: 25%;
+   height: auto;
+   position: relative;
+   text-align: center;
+   transition: 1s;
+}
+
+.slide-box2 img {
+   width: 100%;
+}
+
+.nav-manual2 {
+   position: absolute;
+   width: 38%;
+   margin-top: 35%;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.nav-manual2 .manual-btn2,
+.nav-auto2 div {
+   border: 1px solid white;
+   padding: 10px;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: 0.2s;
+}
+
+.nav-manual2 .manual-btn2:not(:last-child),
+.nav-auto2 div:not(:last-child) {
+   margin-right: 10px;
+}
+
+.nav-manual2 .manual-btn2:hover {
+   background-color: white;
+}
+
+#radio4:checked~.nav-auto2 .auto-btn4 {
+   background-color: white;
+}
+
+#radio5:checked~.nav-auto2 .auto-btn5 {
+   background-color: white;
+}
+
+#radio6:checked~.nav-auto2 .auto-btn6 {
+   background-color: white;
+}
+
+#radio7:checked~.nav-auto2 .auto-btn7 {
+   background-color: white;
+}
+
+#radio8:checked~.nav-auto2 .auto-btn8 {
+   background-color: white;
+}
+
+#radio9:checked~.nav-auto2 .auto-btn9 {
+   background-color: white;
+}
+
+#radio10:checked~.nav-auto2 .auto-btn10 {
+   background-color: white;
+}
+
+#radio4:checked~.segundo {
+   margin-left: 0%;
+}
+
+#radio5:checked~.segundo {
+   margin-left: -14.28%;
+}
+
+#radio6:checked~.segundo {
+   margin-left: -28.56%;
+}
+
+#radio7:checked~.segundo {
+   margin-left: -42.84%;
+}
+
+#radio8:checked~.segundo {
+   margin-left: -57.12%;
+}
+
+#radio9:checked~.segundo {
+   margin-left: -71.4%;
+}
+
+#radio10:checked~.segundo {
+   margin-left: -85.68%;
+}

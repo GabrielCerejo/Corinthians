@@ -1,0 +1,184 @@
+* {
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'corinthians';
+    src: url(../SITE/CORINTHIANS/FONT-CORINTHIANS-2023.otf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    background-color: #222222;
+    color: beige;
+    background-image: url(../SITE/IMG/abraco.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    margin: 0%;
+    margin-right: 0%;
+}
+
+.header {
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    padding: 0%;
+    border: 1px solid white;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #222222;
+}
+
+.container2 {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.container_bottom {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.titulo {
+    color: white;
+    font-weight: lighter;
+    font-family: 'corinthians';
+    display: flex;
+}
+
+.navbar {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    font-family: 'corinthians';
+    font-weight: lighter;
+    font-size: large;
+    margin-right: 20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+.agora {
+    font-weight: 800;
+}
+
+.header .container img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+
+.header .container .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar li:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.navbar .login li:hover {
+    color: red;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+img {
+    width: 8%;
+    margin-left: 2%;
+}
+
+.cadastro {
+    width: 660px;
+    height: 440px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    align-items: center;
+    background-color: #222222;
+}
+
+.cadastro input, .cadastro button {
+    width: 280px;
+    height: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    display: block;
+
+}
+
+.cadastro select {
+    width: 304px;
+    height: 42px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+}
+
+button:hover {
+    background-color: red;
+    transition: 1s;
+}
+
+#div_mensagem {
+    color: #fbff00;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.formulario {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    justify-content: center;
+    padding: 20px;
+    height: 40vh;
+    margin: auto;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+}
+
+.botao button {
+    margin: 20px;
+    height: 100%;
+    transition: 0.3s;
+}
