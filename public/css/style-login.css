@@ -1,12 +1,3 @@
-* {
-    padding: 0;
-}
-
-@font-face {
-    font-family: 'corinthians';
-    src: url(../CORINTHIANS/FONT-CORINTHIANS-2023.otf);
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -18,18 +9,9 @@ body {
     background-size: cover;
 }
 
-h1 {
-    margin: 0%;
-    margin-right: 0%;
-}
-
-.header {
-    width: 90%;
-    margin: auto;
-    justify-content: space-between;
-    display: flex;
-    padding: 0%;
-    border: 1px solid white;
+@font-face {
+    font-family: 'corinthians';
+    src: url(../CORINTHIANS/FONT-CORINTHIANS-2023.otf);
 }
 
 .container {
@@ -40,26 +22,20 @@ h1 {
     background-color: #222222;
 }
 
-.container2 {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 80px;
-}
-
-.container_bottom {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
-}
-
 .titulo {
     color: white;
     font-weight: lighter;
     font-family: 'corinthians';
     display: flex;
+}
+
+.header {
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    padding: 0%;
+    border: 1px solid white;
 }
 
 .navbar {
@@ -110,75 +86,66 @@ h1 {
     color: red;
 }
 
+
+
+
+
+.container2 {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 80px;
+}
+
 img {
     width: 8%;
     margin-left: 2%;
 }
 
-.cadastro {
-    width: 660px;
-    height: 440px;
-    padding: 5px;
+.login {
+    width: 300px;
+    height: 365px;
+    padding: 30px;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 0 10px black;
-    align-items: center;
     background-color: #222222;
+    align-items: center;
 }
 
-.cadastro input, .cadastro button {
-    width: 280px;
-    height: 20px;
+.formulario {
+    margin-top: 50px;
+}
+
+.login input, .login button{
+    width: calc(100% - 20px);
     padding: 10px;
     margin-top: 10px;
     display: block;
-
+    margin-left: auto;
+    margin-right: auto;
+    transition: 1s;
 }
 
-.cadastro select {
-    width: 304px;
-    height: 42px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
-    display: block;
-}
-
-button:hover {
+button:hover{
     background-color: red;
     transition: 1s;
 }
 
-#div_mensagem {
-    color: #fbff00;
+#div_mensagem{
+    color:red;
     margin-top: 10px;
     text-align: center;
 }
 
-.formulario {
-    display: flex;
-    justify-content: space-between;
+#div_tentativa{
+    color: yellow;
+    margin-top: 10px;
+    text-align: center;
 }
 
-.card {
-    justify-content: center;
-    padding: 20px;
-    height: 40vh;
-    margin: auto;
-}
-
-.botao {
-    display: flex;
-    justify-content: center;
-}
-
-.botao button {
-    margin: 20px;
-    height: 100%;
-    transition: 0.3s;
-}
-
-h2 {
+h2{
     text-align: center;
     color: white;
     font-family: 'corinthians';
