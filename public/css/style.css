@@ -100,7 +100,7 @@ h1 {
    width: 100%;
    display: flex;
    flex-direction: row;
-   padding: 15px;
+   padding: 30px;
 }
 
 .text {
@@ -113,12 +113,6 @@ h1 {
 }
 .text span {
    margin-left: 15px;
-}
-
-.card img {
-   width: 25%;
-   border: 1px solid #222222;
-   margin: 5px;
 }
 
 .card h1 {
@@ -226,7 +220,7 @@ h1 {
 
 section.slider {
    margin: 0;
-   width: 65%;
+   width: 60%;
    height: auto;
    padding: 0 !important;
    overflow: hidden;
@@ -310,9 +304,12 @@ section .textalt{
    margin-left: -50%;
 }
 
+
+
+
 section.slider2 {
    margin: 0;
-   width: 65%;
+   width: 60%;
    height: auto;
    padding: 0 !important;
    overflow: hidden;
@@ -344,6 +341,7 @@ section .textalt{
 
 .slide-box2 img {
    width: 100%;
+   margin-left: 15px;
 }
 
 .nav-manual2 {
@@ -363,7 +361,7 @@ section .textalt{
    transition: 0.2s;
 }
 
-.nav-manual2 .manual-btn2:not(:last-child),
+.nav-manual2 .manual-btn2:not(:last-child):not(:last-child),
 .nav-auto2 div:not(:last-child) {
    margin-right: 10px;
 }
@@ -388,42 +386,18 @@ section .textalt{
    background-color: white;
 }
 
-#radio8:checked~.nav-auto2 .auto-btn8 {
-   background-color: white;
-}
-
-#radio9:checked~.nav-auto2 .auto-btn9 {
-   background-color: white;
-}
-
-#radio10:checked~.nav-auto2 .auto-btn10 {
-   background-color: white;
-}
-
-#radio4:checked~.segundo {
+#radio4:checked~.first {
    margin-left: 0%;
 }
 
-#radio5:checked~.segundo {
-   margin-left: -14.28%;
+#radio5:checked~.first {
+   margin-left: -25%;
 }
 
-#radio6:checked~.segundo {
-   margin-left: -28.56%;
+#radio6:checked~.first {
+   margin-left: -50%;
 }
 
-#radio7:checked~.segundo {
-   margin-left: -42.84%;
-}
-
-#radio8:checked~.segundo {
-   margin-left: -57.12%;
-}
-
-#radio9:checked~.segundo {
-   margin-left: -71.4%;
-}
-
-#radio10:checked~.segundo {
-   margin-left: -85.68%;
+#radio7:checked~.first {
+   margin-left: -75%;
 }
