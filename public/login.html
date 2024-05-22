@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
     <!--header inicio-->
     <div class="header">
         <div class="container">
@@ -53,7 +53,6 @@
 
 </html>
 <script>
-    var tentativas = 3;
 
     function autenticar() {
         var email = ipt_user.value;
@@ -67,7 +66,7 @@
         console.log("FORM LOGIN: ", email);
         console.log("FORM SENHA: ", senha);
 
-        fetch("/funcionario/autenticar", {
+        fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -79,25 +78,42 @@
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
-            if (resposta.ok) {
-                resposta.json().then(function (resposta) {
-                    console.log(resposta);
+            // if (resposta.ok) {
+            //     resposta.json().then(function (resposta) {
+            //         console.log(resposta);
 
-                    var conteudo = resposta[0]
+                   
 
-                    console.log(conteudo);
-                    console.log(JSON.stringify(conteudo));
-                    sessionStorage.EMAIL_USUARIO = conteudo.email;
-                    sessionStorage.NOME_USUARIO = conteudo.nome;
-                    sessionStorage.ID_USUARIO = conteudo.idFuncionario;
+            //         console.log(resposta);
+            //         console.log("resposta: " + JSON.stringify(resposta));
+            //         sessionStorage.EMAIL_USUARIO = resposta[0].email;
+            //         sessionStorage.NOME_USUARIO = conteudo.nome;
+            //         sessionStorage.ID_USUARIO = conteudo.idFuncionario;
+            //         sessionStorage.CPF_USUARIO = conteudo.cpf;
+            //         sessionStorage.DTNASC_USUARIO = conteudo.dtNasc;
 
-                    window.location = "./dashboard/dashInicio.html";
+            //         window.location = "public/index.html";
+            //     });
+                if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.CPF_USUARIO = json.cpf;
+                    sessionStorage.DTNASC_USUARIO = json.dtNacs;
+
+                    setTimeout(function () {
+                        window.location = "public/index.html";
+                    }, 1000); // apenas para exibir o loading
+
                 });
-
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-                tentativas--;
             
             }
 
