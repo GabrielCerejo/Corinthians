@@ -11,7 +11,7 @@
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/style-cadastro.css" />
-  <link rel="icon" href="../public/IMG/simboloc.png" />
+  <link rel="icon" href="css/IMG/simboloc.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
@@ -19,7 +19,7 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <img src="../public/IMG/simboloc.png">
+      <img src="css/IMG/simboloc.png">
       <h1 class="titulo">BLOG SCCP</h1>
       <ul class="navbar">
         <a href="index.html" class="home">Home</a>
@@ -123,21 +123,19 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+          // cardErro.style.display = "block";
 
           setTimeout(() => {
-            window.location = "public/login.html";
+            window.location = "login.html";
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
       });
 
     return false;

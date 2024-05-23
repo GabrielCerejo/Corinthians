@@ -4,7 +4,7 @@ body {
     font-family: Verdana;
     background-color: #222222;
     color: beige;
-    background-image: url(../IMG/abraco.png);
+    background-image: url(IMG/abraco.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -126,6 +126,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     transition: 1s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button:hover{
