@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizz Programação</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style-quiz.css" />
+  <script src="js/quiz.js" defer></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <img src="css/IMG/simboloc.png">
+      <h1 class="titulo">BLOG SCCP</h1>
+      <ul class="navbar">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>Importancia</li>
+        <li>Historia</li>
+        <li>
+          <a href="idolos.html">Idolos</a>
+        </li>
+        <li>Interativo</li>
+        <li>|</li>
+        <li>
+          <a href="login.html" class="login">Login</a>
+        </li>
+        <li>
+          <a href="cadastro.html" class="cadastro">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container-total">
+    <div class="main">
+      <!-- QUIZZ CONTAINER -->
+      <div id="quizz-container">
+        <p id="question">
+          <span id="question-number">1</span> &#8212;
+          <span id="question-text">Qual é a unidade de medida para metros?</span>
+        </p>
+        <div id="answers-box">
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+        </div>
+      </div>
+
+      <!-- SCORE BOARD -->
+      <div id="score-container" class="hide">
+        <h1>Parabens</h1>
+        <p id="display-score"><span>90</span>%</p>
+        <p>
+          Você acertou <span id="correct-answers">0</span> de
+          <span id="questions-qty">10</span> perguntas
+        </p>
+        <div class="score-container-img">
+          <img src="css/IMG/simboloc.png" alt="">
+        </div>
+        <button id="restart">Refazer quizz!</button>
+      </div>
+
+      <!-- TEMPLATE RESPOSTA -->
+      <button class="answer-template hide">
+        <span class="btn-letter"></span> <span class="question-answer"></span>
+      </button>
+    </div>
+    <div class="footer">
+      <p>
+        <strong>Copyright</strong> &copy; 2024
+        <a href="https://github.com/lucianesantcs/"><strong>Luciane Santos</strong></a> /
+        <a href="https://www.linkedin.com/in/matheusbattisti/"><strong>Matheus Battisti</strong></a>
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

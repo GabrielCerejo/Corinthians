@@ -1,134 +1,210 @@
 @font-face {
-    font-family: 'corinthians';
-    src: url(../CORINTHIANS/FONT-CORINTHIANS-2023.otf);
- }
- 
- body {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana;
-    background-color: #222222;
-    color: whitesmoke;
-    align-items: center;
-    position: relative;
-    overflow-x: hidden;
- }
- 
- h1 {
-    margin: 0%;
-    margin-right: 0%;
- }
- 
- .header {
-    width: 100%;
-    margin: auto;
-    justify-content: space-between;
-    display: flex;
-    padding: 0;
-    background-color: #222222;
-    border: 1px solid white;
-    z-index: 100;
-    overflow-x:hidden;
- }
- 
- .container {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    flex-direction: row;
-    justify-content: space-between;
- }
- 
- .container_bottom {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
- }
- 
- .titulo {
-    color: white;
-    font-weight: lighter;
-    font-family: 'corinthians';
-    display: flex;
- }
- 
- .navbar {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-between;
-    color: white;
-    align-items: center;
-    font-family: 'corinthians';
-    font-weight: lighter;
-    font-size: large;
-    margin-right: 25px;
- }
- 
- .banner {
-    color: #fff;
-    width: 100%;
-    height: 50vh;
-    position: relative;
-    background-image: url('IMG/banner.png');
-    background-repeat: no-repeat;
-    align-items: center;
- }
- 
- .banner .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
- }
- 
- .banner .container p {
-    font-size: 40px;
-    width: 35%;
-    color: black;
- }
-
- .header a {
-    text-decoration: none;
-    color: white;
- }
- 
- .header .container img {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
- }
- 
- .header .container .titulo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- }
- 
- .navbar li:hover {
-    color: red;
-    cursor: pointer;
- }
- 
- .navbar .login li:hover {
-    color: red;
- }
- 
- .navbar a:hover {
-    color: red;
- }
-
-.intro{
-    margin-top: 50px;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'corinthians';
+   src: url(../CORINTHIANS/FONT-CORINTHIANS-2023.otf);
 }
 
-.intro h1{
-    font-family: 'corinthians';
-    font-weight: 100;
-    font-size: 50px;
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Verdana;
+   background-color: #222222;
+   color: whitesmoke;
+   align-items: center;
+   position: relative;
+   overflow-x: hidden;
+}
+
+h1 {
+   margin: 0%;
+   margin-right: 0%;
+}
+
+.header {
+   width: 100%;
+   margin: auto;
+   justify-content: space-between;
+   display: flex;
+   padding: 0;
+   background-color: #222222;
+   border: 1px solid white;
+   z-index: 100;
+   overflow-x: hidden;
+}
+
+.container {
+   display: flex;
+   width: 100%;
+   margin: 0 auto;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.container_bottom {
+   display: flex;
+   width: 100%;
+   margin: 0 auto;
+   justify-content: space-between;
+}
+
+.titulo {
+   color: white;
+   font-weight: lighter;
+   font-family: 'corinthians';
+   display: flex;
+}
+
+.navbar {
+   width: 70%;
+   display: flex;
+   flex-direction: row;
+   list-style: none;
+   justify-content: space-between;
+   color: white;
+   align-items: center;
+   font-family: 'corinthians';
+   font-weight: lighter;
+   font-size: large;
+   margin-right: 25px;
+}
+
+.banner {
+   color: #fff;
+   width: 100%;
+   height: 50vh;
+   position: relative;
+   background-image: url('IMG/banner.png');
+   background-repeat: no-repeat;
+   align-items: center;
+}
+
+.banner .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+}
+
+.banner .container p {
+   font-size: 40px;
+   width: 35%;
+   color: black;
+}
+
+.header a {
+   text-decoration: none;
+   color: white;
+}
+
+.header .container img {
+   width: 60px;
+   height: 60px;
+   margin: 5px;
+}
+
+.header .container .titulo {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.navbar li:hover {
+   color: red;
+   cursor: pointer;
+}
+
+.navbar .login li:hover {
+   color: red;
+}
+
+.navbar a:hover {
+   color: red;
+}
+
+.container2 {
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.intro {
+   width: 100%;
+   height: 350px;
+   align-items: center;
+   text-align: center;
+   background-image: url(IMG/treino.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+.intro-txt h1 {
+   font-family: 'corinthians';
+   font-weight: 100;
+   font-size: 50px;
+   color: black;
+   background-color: white;
+   text-align: center;
+   align-items: center;
+}
+
+.intro-txt{
+   margin-top: 150px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.card-idolo{
+   display: flex;
+   flex-direction: row;
+   margin: 20px;
+   margin-top: 50px;
+}
+
+.card-idolo img{
+   width: 40%;
+   border: 5px groove black;
+   margin-left: 5px;
+   border-radius: 10px;
+}
+
+.card-idolo h1{
+   font-family: 'corinthians';
+   font-weight: lighter;
+   font-size: xx-large;
+}
+
+.card-idolo .card-txt span{
+   margin-left: 30px;
+}
+
+.card-idolo2{
+   display: flex;
+   flex-direction: row;
+   margin: 20px;
+   margin-top: 50px;
+}
+
+.card-idolo2 img{
+   width: 40%;
+   border: 5px groove black;
+   margin-right: 20px;
+   border-radius: 10px;
+}
+
+.card-idolo2 h1{
+   font-family: 'corinthians';
+   font-weight: lighter;
+   font-size: xx-large;
+}
+
+.card-idolo2 .card-txt span {
+   margin-left: 30px;
+}
+
+.container3{
+   padding-top: 30px;
+   padding-bottom: 30px;
 }
