@@ -90,22 +90,79 @@
     var cpfVar = cpf_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var dtNascVar = dtNasc_input.value
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
+    var dtNascVar = dtNasc_input.value;
+
+    var caixaBaixaNome = nomeVar.toLowerCase();
+    var caixaBaixaEmail = emailVar.toLowerCase();
+
+    var tamanhoSenha = senhaVar.length;
+
+    var cpfTamanho = cpfVar.length;
+    var senhaTamanho = senhaVar.length;
+
+    var indiceArrobaSenha = senhaVar.indexOf('@');
+    var indiceHashtagSenha = senhaVar.indexOf('#');
+    var indiceCifraoSenha = senhaVar.indexOf('$');
+    var indiceComercialSenha = senhaVar.indexOf('&');
+
+    var indiceArrobaEmail = emailVar.indexOf('@');
+    var indicePontoEmail = emailVar.indexOf('.');
+
+    var fazerCadastro = true;
+
+    div_mensagem.innerHTML = ` `;
+
+    if (nomeVar == "" ||
       cpfVar == "" ||
+      emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
       dtNascVar == ""
     ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
+      div_mensagem.innerHTML =
+        `<span style="color: yellow;"> - Todos os campos devem estar preenchidos!</span><br><br>`;
       return false;
-    } 
+    }
+
+    if (indiceArrobaSenha < 0 &&
+      indiceCifraoSenha < 0 &&
+      indiceComercialSenha < 0 &&
+      indiceHashtagSenha < 0
+    ) {
+      div_mensagem.innerHTML =
+        `<span style="color: yellow;"> - Senha inválida, tente novamente! (a senha precisa ter pelo menos 1 caractere especial entre essas opções: (@ - # - $ - &))</span><br><br>`;
+      return false;
+    }
+
+    if (cpfTamanho != 11
+    ) {
+      div_mensagem.innerHTML =
+        `<span style="color: yellow;"> - CPF inválido, tente novamente! (quantidade de dígitos errada)</span><br><br>`;
+      return false;
+    }
+
+    if (senhaVar != confirmacaoSenhaVar
+    ) {
+      div_mensagem.innerHTML =
+        `<span style="color: yellow;"> - Senha e senha de confirmação diferentes! Tente novamente</span><br><br>`;
+      return false;
+    }
+
+    if (tamanhoSenha < 5 ||
+      tamanhoSenha > 15
+    ) {
+      div_mensagem.innerHTML =
+        `<span style="color: yellow;"> - Senha inválida, tente novamente! (a senha precisa ter pelo menos 5 caracteres e no máximo 15 caracteres)</span><br><br>`;
+      return false;
+    }
+
+    if (indiceArrobaEmail < 0 ||
+      indicePontoEmail < 0
+    ) {
+      div_mensagem.innerHTML =
+        `<span style="color: yellow;"> - Email inválido, tente novamente! (o email precisa ter "@" e ".")</span><br><br>`;
+      return false;
+    }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
