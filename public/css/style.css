@@ -135,25 +135,34 @@ h1 {
    align-items: center;
    text-align: center;
    flex-direction: row;
-   color: black
+   color: black;
+   padding: 30px 0;
 }
 
 .bloco {
    padding: 40px;
-   margin: 5%;
+   margin: 20px;
    text-align: justify;
    display: flex;
-   flex-direction: column;
-   margin-right: 55%;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
 }
 
-.bloco h1 {
+.bloco p {
+   font-size: larger;
+   width: 50%;
+}
+
+.container2 h1 {
    color: black;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'corinthians';
+   font-weight: lighter;
 }
 
 .bloco img {
-   width: 50%;
+   width: 40%;
+   margin-left: 40px;
 }
 
 .social .container2 button {
@@ -184,7 +193,7 @@ h1 {
 
 .footer {
    height: 100px;
-   background-color: #32b9cd;
+   background-color: black;
 }
 
 .footer .container {
