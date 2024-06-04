@@ -51,14 +51,15 @@ h1 {
    font-weight: lighter;
    font-family: 'corinthians';
    display: flex;
+   margin-right: 25%;
 }
 
 .navbar {
-   width: 70%;
+   width: 50%;
    display: flex;
    flex-direction: row;
    list-style: none;
-   justify-content: space-between;
+   justify-content: space-around;
    color: white;
    align-items: center;
    font-family: 'corinthians';
@@ -149,52 +150,52 @@ h1 {
    align-items: center;
 }
 
-.intro-txt{
+.intro-txt {
    margin-top: 150px;
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
-.card-idolo{
+.card-idolo {
    display: flex;
    flex-direction: row;
    margin: 20px;
    margin-top: 50px;
 }
 
-.card-idolo img{
+.card-idolo img {
    width: 40%;
    border: 5px groove black;
    margin-left: 5px;
    border-radius: 10px;
 }
 
-.card-idolo h1{
+.card-idolo h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
 }
 
-.card-idolo .card-txt span{
+.card-idolo .card-txt span {
    margin-left: 30px;
 }
 
-.card-idolo2{
+.card-idolo2 {
    display: flex;
    flex-direction: row;
    margin: 20px;
    margin-top: 50px;
 }
 
-.card-idolo2 img{
+.card-idolo2 img {
    width: 40%;
    border: 5px groove black;
    margin-right: 20px;
    border-radius: 10px;
 }
 
-.card-idolo2 h1{
+.card-idolo2 h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
@@ -204,48 +205,48 @@ h1 {
    margin-left: 30px;
 }
 
-.container3{
+.container3 {
    padding-top: 30px;
    padding-bottom: 30px;
 }
 
-.card-cassio{
+.card-cassio {
    display: flex;
    flex-direction: row;
    margin: 20px;
 }
 
-.card-cassio img{
+.card-cassio img {
    width: 40%;
    border: 5px groove black;
    margin-left: 5px;
    border-radius: 10px;
 }
 
-.card-cassio h1{
+.card-cassio h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
 }
 
-.card-cassio .cardCassio-txt span{
+.card-cassio .cardCassio-txt span {
    margin-left: 30px;
 }
 
-.card-cassio2{
+.card-cassio2 {
    display: flex;
    flex-direction: row;
    margin: 20px;
 }
 
-.card-cassio2 img{
+.card-cassio2 img {
    width: 40%;
    border: 5px groove black;
    margin-right: 20px;
    border-radius: 10px;
 }
 
-.card-cassio2 h1{
+.card-cassio2 h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
@@ -254,4 +255,17 @@ h1 {
 .card-cassio2 .cardCassio-txt span {
    margin-left: 30px;
    line-height: 40px;
+}
+
+body::-webkit-scrollbar {
+   width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+   background: whitesmoke;
+}
+
+body::-webkit-scrollbar-thumb {
+   background-color: gray;
+   border-radius: 20px;
 }

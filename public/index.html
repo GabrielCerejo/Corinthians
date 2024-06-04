@@ -18,13 +18,17 @@
                 <li>
                     <a href="index.html">Home</a>
                 </li>
-                <li>Importancia</li>
-                <li>Historia</li>
+                <li>
+                    <a href="#importancia">Importancia</a>
+                </li>
+                <li>
+                    <a href="#historia">Historia</a>
+                </li>
                 <li>
                     <a href="idolos.html">Idolos</a>
                 </li>
                 <li>
-                    <a href="quiz.html">Quiz</a>
+                    <a href="#quiz">Quiz</a>
                 </li>
                 <li>|</li>
                 <li>
@@ -41,7 +45,7 @@
 
     <div class="social">
         <div class="container">
-            <div class="card">
+            <div class="card" id="importancia">
                 <section class="slider">
                     <div class="slider-content">
 
@@ -95,7 +99,7 @@
 
 
 
-            <div class="card">
+            <div class="card" id="historia">
 
                 <div class="text">
                     <h1>Historia</h1>
@@ -160,7 +164,7 @@
             </div>
         </div>
 
-        <div class="container2">
+        <div class="container2" id="quiz">
 
             <h1>Teste os seus conhecimentos do CORINTHIANS</h1><br>
 
@@ -176,7 +180,7 @@
 
             </div>
 
-            <a href="login.html" class="quiz-btn"><button>Ir para o QUIZ</button></a><br><br>
+            <button>Ir para o QUIZ</button><br><br>
 
         </div>
     </div>
@@ -208,24 +212,5 @@
         }
 
         document.getElementById('radio' + cont).checked = true;
-    }
-
-    var radio2 = document.querySelector('manual-btn2');
-    var cont2 = 4;
-
-    document.getElementById('radio4').checked = true;
-
-    setInterval(() => {
-        proximaImg2()
-    }, 5000)
-
-    function proximaImg2() {
-        cont2++;
-
-        if(cont2 > 7){
-            cont2 = 4;
-        }
-
-        document.getElementById('radio2' + cont2).checked = true;
     }
 </script>

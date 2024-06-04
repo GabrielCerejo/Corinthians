@@ -2,6 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+  font-family: 'corinthians';
+  src: url(../CORINTHIANS/FONT-CORINTHIANS-2023.otf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -166,97 +171,8 @@ body {
   font-weight: 800;
 }
 
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
 .ideal {
   background-color: #9ccc65;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  color: white;
-}
-
-.card-aquario {
-  margin: 2%;
-  min-width: 40%;
-  max-width: 50%;
-  width: fit-content;
-  flex-wrap: wrap;
-  display: flex;
-  /* text-align: center; */
-  height: 180px;
-  /* justify-content: right; */
-  background-color: #212124;
-  font-size: 20px;
-}
-
-.card-aquario h1 {
-  width: fit-content;
-}
-
-.card-aquario p {
-  margin: 0;
-  font-size: 50px;
-  font-weight: lighter;
-  text-align: left;
-}
-
-.desc-aquario {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.desc-aquario .cor-alerta {
-  width: 30px;
-}
-
-.title-aquario {
-  width: 100%;
-}
-
-
-.cards h1 {
-  font-size: 22px;
-  border-bottom: solid white 1px;
-  text-align: left;
-  font-weight: lighter;
-  margin: 20px;
-}
-
-.temperatura,
-.umidade {
-  margin: 5px;
-  margin-left: 20px;
-  width: 75%;
-}
-
-.cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50%;
-  display: inline-block;
 }
 
 .btns-dash {
@@ -266,18 +182,6 @@ body {
   margin-top: 30px;
   flex-wrap: wrap;
   padding: 0 30% 0 30%;
-}
-
-.graph {
-  width: 70%;
-  margin: auto;
-  padding-top: 10px;
-}
-
-.tituloGraficos {
-  color: rgb(216, 216, 216);
-  display: flex;
-  justify-content: center;
 }
 
 .btn-chart {
@@ -365,7 +269,9 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: white;
+  font-family: 'corinthians';
+  font-weight: lighter;
 }
 
 .hello {
@@ -375,7 +281,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: rgb(255, 115, 0);
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -386,8 +292,8 @@ canvas {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
+  color: rgb(255, 115, 0);
+  background-color: black;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -396,14 +302,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid black;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: black;
   padding: 0;
   margin: 0;
 }
@@ -425,4 +331,100 @@ canvas {
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+.titulo h1 {
+  font-family: 'corinthians';
+  font-weight: lighter;
+  /* color: rgb(255, 115, 0); */
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
+.titulo {
+  align-items: center;
+  /* background-color: rgb(255, 115, 0); */
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card {
+  width: 50vw;
+  align-items: center;
+  text-align: center;
+  border: 5px groove black;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: black;
+}
+
+.card h1 {
+  font-family: 'corinthians';
+  font-weight: lighter;
+  color: rgb(255, 115, 0);
+  /* background-color: black; */
+}
+
+.card .txt{
+  background-color: #222222;
+  color: white;
+  padding: 20px;
+  line-height: 23px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.card button {
+  height: 45px;
+  width: 250px;
+  font-family: 'corinthians';
+  font-size: x-large;
+  background-color: #222222;
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 2px double rgb(255, 255, 255);
+  padding: auto 15px 15px auto;
+  gap: 5px;
+  transition: all 250ms;
+  position:relative;
+  overflow: hidden;
+  z-index: 0;
+  margin: 20px;
+}
+
+.card button:hover{
+  background: rgb(0, 0, 0);
+  color: rgb(255, 115, 0);
+  border: 2px double rgb(255, 115, 0);
+
+}
+
+.card button::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: black;
+  z-index: -1;
+  color: rgb(255, 115, 0);
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.card button:hover::before {
+  width: 100%;
+  color: black
 }
