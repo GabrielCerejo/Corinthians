@@ -32,21 +32,20 @@
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>INTERATIVO</h3>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+                    <h3>GRÁFICOS</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>FÓRUM SCCP</h3>
                 </a>
             </div>
-
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
@@ -66,21 +65,27 @@
                     <h1>Quiz SCCP</h1>
                     <div class="txt">
                         <p>Ao clicar no botão abaixo você será redirecionado para o QUIZ SCCP. <br>
-                            Nele, os seus conhecimento sobre o Corinthians serão testados. São 15 perguntas de múltipla escolha, somente para quem realmente entende de Corinthians. <br>
-                            Ao final você poderá se redirecionar para uma Dashboard, com gráficos atualizados dinâmicamente.</p>
+                            Nele, os seus conhecimento sobre o Corinthians serão testados. São 15 perguntas de múltipla
+                            escolha, somente para quem realmente entende de Corinthians. <br>
+                            Ao final você poderá se redirecionar para uma Dashboard, com gráficos atualizados
+                            dinâmicamente.</p>
                     </div>
-                    <button>Ir para o Quiz</button>
+                    <button onclick="quiz()">Ir para o Quiz</button>
                 </div>
 
                 <div class="card">
                     <h1>Forum de noticias</h1>
                     <div class="txt">
-                        <p>Ao clicar no botão abaixo você será redirecionado para o Fórum SCCP.
-                            Nele, você verá as principais opiniões sobre o dia a dia do Corinthians. Você poderá publicar suas opiniões, sem ofender nunhum usuário alheio, sendo sujeito a banimento permanente do Blog. <br>
-                            Lembre-se que o Fórum SCCP é um local dedicado à corinthianos para debaterem as princiais notícias do clube.
+                        <p>Ao clicar no botão abaixo você será redirecionado ao Fórum SCCP.
+                            Lá, você verá as principais opiniões populares sobre o dia a dia do Corinthians. Você poderá
+                            publicar sua opinião. Por isso, tenha respeito e bom-senso ao utilizar a ferramenta.<br>
+                            Lembre-se que o Fórum SCCP é um local dedicado à corinthianos para debaterem as princiais
+                            notícias do clube.
                         </p>
                     </div>
-                    <button>Entrar no Fórum SCCP</button>
+                    <a href="mural.html">
+                        <button>Entrar no Forum SCCP</button>
+                    </a>
                 </div>
             </div>
 
@@ -108,6 +113,10 @@
                     </div>
                     `
         });
+    }
+
+    function quiz() {
+        window.location = "quiz.html";
     }
 
 </script>

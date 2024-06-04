@@ -26,7 +26,7 @@
 
         <div class="header-left">
 
-            <h1>AquaTech</h1>
+            <h1>BLOG SCCP</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -34,18 +34,18 @@
 
             <div class="btn-nav-white">
                 <a href="cards.html">
-                    <h3>Aquários</h3>
+                    <h3>INTERATIVO</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+                    <h3>GRÁFICOS</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
+                <h3>FÓRUM SCCP</h3>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -61,26 +61,33 @@
                 <div id="alerta">
                 </div>
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
+                    <h1>Seja bem-vindo ao Forum SCCP</h1>
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                                <h2>Escolha um tema para opinar:</h2>
+                                <select name="" id="select_tema">
+                                    <option value="0" disabled selected>Selecione um tema</option>
+                                    <option value="1"><b id="chamativo">Bastidores</b> | A saída de Cássio</option>
+                                    <option value="2"><b id="chamativo">Bastidores</b> | A saída de Paulinho</option>
+                                    <option value="3"><b id="chamativo">Jogadores</b> | A grande partida de Igor Coronado</option>
+                                    <option value="4"><b id="chamativo">Sulamericana</b> | Classificação com vitória</option>
+                                    <option value="5"><b id="chamativo">Brasileirão</b> | Derrota para o Botafogo</option>
+                                </select>
                             </label>
                             <br>
                             <br>
                             <label>
                                 Descrição (máximo de 250 caracteres):
                                 <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" placeholder="'Achei muito triste por ser o maior ídolo...'"></textarea>
                             </label>
                             <br>
                             <br>
                             <button>Enviar</button>
                         </form>
                     </div>
+                    <div class="divisoria"></div>
                     <h1>Mural de Avisos</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">

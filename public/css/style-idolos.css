@@ -110,16 +110,16 @@ h1 {
 }
 
 .navbar li:hover {
-   color: red;
+   color: rgb(255, 115, 0);
    cursor: pointer;
 }
 
 .navbar .login li:hover {
-   color: red;
+   color: rgb(255, 115, 0);
 }
 
 .navbar a:hover {
-   color: red;
+   color: rgb(255, 115, 0);
 }
 
 .container2 {
@@ -144,8 +144,8 @@ h1 {
    font-family: 'corinthians';
    font-weight: 100;
    font-size: 50px;
-   color: black;
-   background-color: white;
+   color: rgb(255, 115, 0);
+   background-color: #222222;
    text-align: center;
    align-items: center;
 }
@@ -175,6 +175,7 @@ h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
+   color: rgb(255, 115, 0);
 }
 
 .card-idolo .card-txt span {
@@ -199,6 +200,7 @@ h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
+   color: rgb(255, 115, 0);
 }
 
 .card-idolo2 .card-txt span {
@@ -227,6 +229,7 @@ h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: xx-large;
+   color: rgb(255, 115, 0);
 }
 
 .card-cassio .cardCassio-txt span {
@@ -262,10 +265,10 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-   background: whitesmoke;
+   background: #222222;
 }
 
 body::-webkit-scrollbar-thumb {
-   background-color: gray;
+   background-color: rgb(255, 115, 0);
    border-radius: 20px;
 }

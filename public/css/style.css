@@ -129,6 +129,7 @@ h1 {
    font-family: 'corinthians';
    font-weight: lighter;
    font-size: 45px;
+   color: rgb(255, 115, 0);
 }
 
 .container2 {
@@ -250,16 +251,16 @@ h1 {
 }
 
 .navbar li:hover {
-   color: red;
+   color: rgb(255, 115, 0);
    cursor: pointer;
 }
 
 .navbar .login li:hover {
-   color: red;
+   color: rgb(255, 115, 0);
 }
 
 .navbar a:hover {
-   color: red;
+   color: rgb(255, 115, 0);
 }
 
 section.slider {
@@ -308,7 +309,7 @@ section .textalt {
 
 .nav-manual .manual-btn,
 .nav-auto div {
-   border: 1px solid white;
+   border: 1px solid rgb(255, 115, 0);
    padding: 10px;
    border-radius: 50%;
    cursor: pointer;
@@ -321,19 +322,19 @@ section .textalt {
 }
 
 .nav-manual .manual-btn:hover {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio1:checked~.nav-auto .auto-btn1 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio2:checked~.nav-auto .auto-btn2 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio3:checked~.nav-auto .auto-btn3 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio1:checked~.primeiro {
@@ -398,7 +399,7 @@ section .textalt {
 
 .nav-manual2 .manual-btn2,
 .nav-auto2 div {
-   border: 1px solid white;
+   border: 1px solid rgb(255, 115, 0);
    padding: 10px;
    border-radius: 50%;
    cursor: pointer;
@@ -411,23 +412,23 @@ section .textalt {
 }
 
 .nav-manual2 .manual-btn2:hover {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio4:checked~.nav-auto2 .auto-btn4 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio5:checked~.nav-auto2 .auto-btn5 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio6:checked~.nav-auto2 .auto-btn6 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio7:checked~.nav-auto2 .auto-btn7 {
-   background-color: white;
+   background-color: rgb(255, 115, 0);
 }
 
 #radio4:checked~.first {
@@ -451,10 +452,10 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-   background: whitesmoke;
+   background: #222222;
 }
 
 body::-webkit-scrollbar-thumb {
-   background-color: gray;
+   background-color: rgb(255, 115, 0);
    border-radius: 20px;
 }

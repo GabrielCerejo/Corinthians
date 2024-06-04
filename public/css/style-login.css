@@ -75,16 +75,16 @@ body {
 }
 
 .navbar li:hover {
-    color: red;
+    color: rgb(255, 115, 0);
     cursor: pointer;
 }
 
 .navbar .login li:hover {
-    color: red;
+    color: rgb(255, 115, 0);
 }
 
 .navbar a:hover {
-    color: red;
+    color: rgb(255, 115, 0);
 }
 
 
@@ -157,9 +157,9 @@ button:hover {
  }
  
  .login button:hover{
-    background: rgb(0, 0, 0);
-    color: #fff ;
-    border: 2px double rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    color: black ;
+    border: 2px double black;
  
  }
  
@@ -170,9 +170,9 @@ button:hover {
     position: absolute;
     height: 100%;
     width: 0;
-    background: #000000;
+    background: rgb(255, 115, 0);
     z-index: -1;
-    color: #fff;
+    color: black;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
     box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
     transition: all 250ms;
@@ -180,7 +180,7 @@ button:hover {
  
  .login button:hover::before {
     width: 100%;
-    color: #fff
+    color: black
  }
 
 
