@@ -21,17 +21,17 @@ function autenticar(req, res) {
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
 
-                                if (resultadoAutenticar.length > 0) {
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                        dtNasc: resultadoAutenticar[0].dtNasc
-                                    });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
+                        if (resultadoAutenticar.length > 0) {
+                            res.json({
+                                idUsuario: resultadoAutenticar[0].idUsuario,
+                                email: resultadoAutenticar[0].email,
+                                nome: resultadoAutenticar[0].nome,
+                                senha: resultadoAutenticar[0].senha,
+                                dtNasc: resultadoAutenticar[0].dtNasc
+                            });
+                        } else {
+                            res.status(204).json({ aquarios: [] });
+                        }
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -66,7 +66,7 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (dtNasc == undefined) {
         res.status(400).send("Sua data está undefined!");
-    } else if (cpf == undefined ){
+    } else if (cpf == undefined) {
         res.status(400).send("Seu CPF está undefined!");
     } else {
 
@@ -95,26 +95,59 @@ function finalizar(req, res) {
     var incorretas = req.body.incorretasServer;
     var idUsuario = req.body.idUsuarioServer;
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.finalizar(corretas, incorretas, idUsuario)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    usuarioModel.finalizar(corretas, incorretas, idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function select_quiz(req, res) {
+    var idUsuario = req.body.idUsuarioServer
+
+    usuarioModel.select_quiz(idUsuario)
+        .then(
+            function (resultado_quiz) {
+
+                res.json({
+                    resultado_quiz
+                });
+            }
+        )
+}
+
+function buscar_quiz(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+    const limite_linhas = 1;
+
+    usuarioModel.buscar_quiz(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 
 module.exports = {
     autenticar,
     cadastrar,
-    finalizar
+    finalizar,
+    select_quiz,
+    buscar_quiz
 }

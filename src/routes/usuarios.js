@@ -16,4 +16,12 @@ router.post("/finalizar", function (req, res) {
     usuarioController.finalizar(req, res);
 });
 
+router.post("/slect_quiz", function (req, res) {
+    usuarioController.select_quiz(req, res);
+});
+
+router.post("/buscar_quiz", function (req, res) {
+    usuarioController.buscar_quiz(req, res);
+});
+
 module.exports = router;

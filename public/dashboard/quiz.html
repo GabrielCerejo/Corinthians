@@ -212,7 +212,7 @@
             perguntaAtual++;
             document.getElementById("pergunta" + perguntaAtual).style.display = "block";
         } else {
-            mensagem.innerHTML = `<button onclick="finalizar()">Finalizar</button>` //exibirResultados();
+            mensagem.innerHTML = `<button onclick="finalizar(), timeout">Finalizar</button>` //exibirResultados();
         }
     }
 
@@ -220,7 +220,7 @@
         return sessionStorage.ID_USUARIO || 'desconhecido';
     }
 
-    function exibirResultados() {
+    function finalizar() {
         const fk_usuario = obterIdUsuario();
         document.getElementById("quiz").style.display = "none";
         document.getElementById("resultados").style.display = "block";
@@ -327,34 +327,34 @@
         window.location.href = './dashboard.html'
     }
 
-    // var timeout = setTimeout(function quizSelect() {
-    //     fetch("/usuarios/quizSelect", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             idUsuarioServer: sessionStorage.ID_USUARIO
-    //         })
-    //     }).then(function (resposta) {
-    //         console.log("ESTOU NO THEN DO entrar()!")
-    //         if (resposta.ok) {
-    //             console.log(resposta);
+    var timeout = setTimeout(function select_quiz() {
+        fetch("/usuarios/select_quiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+            if (resposta.ok) {
+                console.log(resposta);
 
-    //             resposta.json().then(json => {
-    //                 console.log(json);
-    //                 console.log(JSON.stringify(json));
-    //                 console.log(json.resultado_Quiz[0])
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    console.log(json.resultado_quiz[0])
 
-    //                 var resultado = json.resultado_Quiz[0];
+                    var resultado = json.resultado_quiz[0];
 
-    //                 var certasBD = resultado.certas;
-    //                 var erradasBD = resultado.erradas;
+                    var corretasBD = resultado.corretas;
+                    var incorretasBD = resultado.incorretas;
 
-    //                 certasDash = certasBD;
-    //                 erradasDash = erradasBD;
-    //             })
-    //         }
-    //     })
-    // }, 200)
+                    corretasDash = corretasBD;
+                    incorretasDash = incorretasBD;
+                })
+            }
+        })
+    }, 200)
 </script>
