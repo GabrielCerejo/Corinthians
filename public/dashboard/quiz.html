@@ -1,549 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quizz Programação</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./../css/style-quiz.css" />
-  <!-- <script src="js/quiz.js" defer></script> -->
+    <link rel="shortcut icon" href="../assets/imgs/logo-removebg-preview.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/style-quiz.css" />
+
+    <script src="../js/sessao.js"></script>
+    <!-- <script src="../js/alerta.js"></script> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,70
+        0;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
-  <div class="header">
-    <div class="container">
-      <img src="./../css/IMG/simboloc.png">
-      <h1 class="titulo">BLOG SCCP</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>Importancia</li>
-        <li>Historia</li>
-        <li>
-          <a href="idolos.html">Idolos</a>
-        </li>
-        <li>
-          <a href="quiz.html">Quiz</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html" class="login">Login</a>
-        </li>
-        <li>
-          <a href="cadastro.html" class="cadastro">Cadastro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="container-total">
-    <div class="main">
-      <!-- QUIZZ CONTAINER -->
-      <div id="quizz-container">
-        <p id="question">
-          <span id="question-number">1</span> &#8212;
-          <span id="question-text">Qual é a unidade de medida para metros?</span>
-        </p>
-        <div id="answers-box">
-          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-          <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
-        </div>
-      </div>
 
-      <!-- SCORE BOARD -->
-      <div id="score-container" class="hide">
-        <h1>Parabens</h1>
-        <p id="display-score"><span>90</span>%</p>
-        <p>
-          Você acertou <span id="correct-answers">0</span> de
-          <span id="questions-qty">10</span> perguntas
-        </p>
-        <div class="score-container-img">
-          <img src="./../css/IMG/simboloc.png" alt="">
-        </div>
-        <button id="restart">Refazer o quiz</button>
-      </div>
+    <div class="janela">
 
-      <!-- TEMPLATE RESPOSTA -->
-      <button class="answer-template hide">
-        <span class="btn-letter"></span> <span class="question-answer"></span>
-      </button>
+        <div class="header-left dash-header">
+
+            <h1>OnlyBasketball</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./inicio_dash.html">
+                    <h3>Inicio</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Quiz</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <!-- <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural de Avisos</h3>
+                </a>
+            </div> -->
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div id="quizContainer">
+                <div id="box">
+                    <div id="inicarQuiz">
+
+                        <h1>Quiz Sobre Basquete</h1>
+                        <p>Vamos testar os seus conhecimentos?</p>
+                        <button onclick="iniciar()">Jogar</button>
+                    </div>
+                    <div id="quiz" style="display: none;">
+                        <div id="pergunta1" class="pergunta">
+                            <h2>Qual é a altura do aro de basquete em metros?</h2>
+                            <button onclick="responder(this, '3,05 metros')">3 metros</button>
+                            <button onclick="responder(this, '3,05 metros')">3,50 metros</button>
+                            <button onclick="responder(this, '3,05 metros')">3,05 metros</button>
+                            <button onclick="responder(this, '3,05 metros')">2,80 metros</button>
+                        </div>
+                        <div id="pergunta2" class="pergunta" style="display: none;">
+                            <h2>Quantos jogadores compõem uma equipe de basquete em quadra?</h2>
+                            <button onclick="responder(this, '5 jogadores')">5 jogadores</button>
+                            <button onclick="responder(this, '5 jogadores')">6 jogadores</button>
+                            <button onclick="responder(this, '5 jogadores')">4 jogadores</button>
+                            <button onclick="responder(this, '5 jogadores')">7 jogadores</button>
+                        </div>
+                        <div id="pergunta3" class="pergunta" style="display: none;">
+                            <h2>Quanto tempo dura um jogo de basquete, incluindo os intervalos?</h2>
+                            <button onclick="responder(this, '48 minutos')">46 minutos</button>
+                            <button onclick="responder(this, '48 minutos')">48 minutos</button>
+                            <button onclick="responder(this, '48 minutos')">50 minutos</button>
+                            <button onclick="responder(this, '48 minutos')">49 minutos</button>
+                        </div>
+                        <div id="pergunta4" class="pergunta" style="display: none;">
+                            <h2>Quais são os principais tipos de arremessos no basquete?</h2>
+                            <button
+                                onclick="responder(this, 'Arremesso de dois pontos e arremesso de três pontos.')">Arremesso
+                                de dois pontos e arremesso de quatro pontos</button>
+                            <button
+                                onclick="responder(this, 'Arremesso de dois pontos e arremesso de três pontos.')">Arremesso
+                                de um ponto e arremesso de três pontos</button>
+                            <button
+                                onclick="responder(this, 'Arremesso de dois pontos e arremesso de três pontos.')">Arremesso
+                                de um ponto e arremesso de dois pontos</button>
+                            <button
+                                onclick="responder(this, 'Arremesso de dois pontos e arremesso de três pontos.')">Arremesso
+                                de dois pontos e arremesso de três pontos.</button>
+                        </div>
+                        <div id="pergunta5" class="pergunta" style="display: none;">
+                            <h2>Qual é o time respectivo de Los Angeles?</h2>
+                            <button onclick="responder(this, 'Lakers')">Golden States</button>
+                            <button onclick="responder(this, 'Lakers')">Lakers</button>
+                            <button onclick="responder(this, 'Lakers')">76xers</button>
+                            <button onclick="responder(this, 'Lakers')">Heat</button>
+                        </div>
+                        <div id="pergunta6" class="pergunta" style="display: none;">
+                            <h2>Qual é o nome da linha que delimita a área de três pontos?s</h2>
+                            <button onclick="responder(this, 'Linha dos 3 pontos')">Garrafão</button>
+                            <button onclick="responder(this, 'Linha dos 3 pontos')">Meio Campo</button>
+                            <button onclick="responder(this, 'Linha dos 3 pontos')">Reta dos 3 pontos</button>
+                            <button onclick="responder(this, 'Linha dos 3 pontos')">Linha dos 3 pontos</button>
+                        </div>
+                        <div id="pergunta7" class="pergunta" style="display: none;">
+                            <h2>Quanto tempo um jogador tem para passar a bola depois de recebê-la?</h2>
+                            <button onclick="responder(this, '5 segundos')">5 segundos</button>
+                            <button onclick="responder(this, '5 segundos')">4 segundos</button>
+                            <button onclick="responder(this, '5 segundos')">6 segundos</button>
+                            <button onclick="responder(this, '5 segundos')">7 segundos</button>
+                        </div>
+                        <div id="pergunta8" class="pergunta" style="display: none;">
+                            <h2>O que significa "rebote" no basquete?</h2>
+                            <button onclick="responder(this, 'Captura da bola após um arremesso perdido.')">Captura da
+                                bola em área inimigo</button>
+                            <button onclick="responder(this, 'Captura da bola após um arremesso perdido.')">Captura da
+                                bola na linha dos 3 pontos</button>
+                            <button onclick="responder(this, 'Captura da bola após um arremesso perdido.')">Captura da
+                                bola no meio da quadra</button>
+                            <button onclick="responder(this, 'Captura da bola após um arremesso perdido.')">Captura da
+                                bola após um arremesso perdido.</button>
+                        </div>
+                        <div id="pergunta9" class="pergunta" style="display: none;">
+                            <h2>Quais são as posições tradicionais em uma equipe de basquete?</h2>
+                            <button onclick="responder(this, 'Armador, Ala-armador, Ala, Ala-pivô e Pivô')">Armador,
+                                Zagueiro, Ala, Ala-pivô e Pivô</button>
+                            <button onclick="responder(this, 'Armador, Ala-armador, Ala, Ala-pivô e Pivô')">Armador,
+                                Ala-armador, Ala, Ala-pivô e Pivô</button>
+                            <button onclick="responder(this, 'Armador, Ala-armador, Ala, Ala-pivô e Pivô')">Armador,
+                                Ala-armador, Ala, Ponta esquerda e Ponta direita</button>
+                            <button onclick="responder(this, 'Armador, Ala-armador, Ala, Ala-pivô e Pivô')">Armador,
+                                Ala-armador, Meio campo, Ala-pivô e Pivô</button>
+                        </div>
+                        <div id="pergunta10" class="pergunta" style="display: none;">
+                            <h2>O basquete foi inventado quando?</h2>
+                            <button onclick="responder(this, '1891')">1891</button>
+                            <button onclick="responder(this, '1891')">1888</button>
+                            <button onclick="responder(this, '1891')">1900</button>
+                            <button onclick="responder(this, '1891')">1884</button>
+                        </div>
+                    </div>
+                    <div id="resultados" style="display: none;">
+                        <h2>Resultados do Quiz</h2>
+                        <canvas id="graficoResultados"></canvas>
+                        <div id="indicadores">
+                            <p>Média de acertos: <span id="media"></span></p>
+                            <p>Você está <span id="acimaOuAbaixo"></span> da média.</p>
+                            <p>Desempenho: <span id="desempenho"></span></p>
+                        </div>
+                        <button onclick="voltar()">Voltar</button>
+                    </div>
+                    <div id="mensagem"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="footer">
-      <p>
-        <strong>Copyright</strong> &copy; 2024
-        <a href="https://github.com/lucianesantcs/"><strong>Luciane Santos</strong></a> /
-        <a href="https://www.linkedin.com/in/matheusbattisti/"><strong>Matheus Battisti</strong></a>
-      </p>
-    </div>
-  </div>
 </body>
-
 </html>
-
 <script>
-  // declaração de variáveis
-  const question = document.querySelector('#question');
-  const answerBox = document.querySelector('#answers-box');
-  const quizzContainer = document.querySelector('#quizz-container');
-  const scoreContainer = document.querySelector('#score-container');
-  const letters = ['a', 'b', 'c', 'd', 'e'];
-  let points = 0;
-  let actualQuestion = 0;
 
-  // perguntas
-  const questions = [
-    {
-      question: `Em que ano o Corinthians foi campeão brasileiro com um primeiro turno invicto?`,
-      answers: [
-        {
-          answer: `2012`,
-          correct: false,
-        },
-        {
-          answer: `2015`,
-          correct: false,
-        },
-        {
-          answer: `2017`,
-          correct: true,
-        },
-        {
-          answer: `2018`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Quem fez o gol do título paulista em 1977, tirando o Corinthias de um jejum histórico?`,
-      answers: [
-        {
-          answer: `"Craque" Neto`,
-          correct: false,
-        },
-        {
-          answer: `Basílio`,
-          correct: true,
-        },
-        {
-          answer: `Marcelinho Carioca`,
-          correct: false,
-        },
-        {
-          answer: `Edílson "Capetinha"`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Na partida contra o Vasco da Gama pelas Quartas de Final da Libertadores 2012, Cássio fez uma de suas maiores defesas no Corinthians. Quem chutou para a defesa do Gigante?`,
-      answers: [
-        {
-          answer: `Luis Fabiano`,
-          correct: false,
-        },
-        {
-          answer: `Neymar`,
-          correct: false,
-        },
-        {
-          answer: `Diego Souza`,
-          correct: true,
-        },
-        {
-          answer: `Guerrero`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `No Mundial de Clubes de 2000, o Corinthians garantiu sua vaga na final diante do Real Madrid. Neste jogo o Corinthians marcos dois gols. De quem foram esses gols?`,
-      answers: [
-        {
-          answer: `Marcelinho Carioca`,
-          correct: false,
-        },
-        {
-          answer: `Vampeta`,
-          correct: false,
-        },
-        {
-          answer: `Freddy Rincon`,
-          correct: false,
-        },
-        {
-          answer: `Edilson "Capetinha"`,
-          correct: true,
-        },
-      ],
-    },
-    {
-      question: `Como a torcida do Corinthians é carinhosamente chamada?`,
-      answers: [
-        {
-          answer: `Gaviões da Fiel`,
-          correct: false,
-        },
-        {
-          answer: `O Bando de Loucos`,
-          correct: true,
-        },
-        {
-          answer: `Trikas`,
-          correct: false,
-        },
-        {
-          answer: `Porco`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Em que ano o Corinthians conquitou seu primeiro título do brasileirão?`,
-      answers: [
-        {
-          answer: `1990`,
-          correct: true,
-        },
-        {
-          answer: `1977`,
-          correct: false,
-        },
-        {
-          answer: `2002`,
-          correct: false,
-        },
-        {
-          answer: `1998`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Durante a participação do Corinthians no Mundial de Clubes FIFA 2012, um jogador do time se destacou marcando dois gols de cabeça, quem é ele?`,
-      answers: [
-        {
-          answer: `Romarinho`,
-          correct: false,
-        },
-        {
-          answer: `Paolo Guerrero`,
-          correct: true,
-        },
-        {
-          answer: `Romero`,
-          correct: false,
-        },
-        {
-          answer: `Emerson Sheik`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Durante a época do Regime Militar no Brasil, um movimento corinthiano a favor da Democracia mudou os rumos do país, trata-se do(a)`,
-      answers: [
-        {
-          answer: `Autistas Alvinegros`,
-          correct: false,
-        },
-        {
-          answer: `Fiel Democracia`,
-          correct: false,
-        },
-        {
-          answer: `Loucos por Democracia`,
-          correct: false,
-        },
-        {
-          answer: `Democracia Corinthiana`,
-          correct: true,
-        },
-      ],
-    },
-    {
-      question: `Durante o pior ano da história do Corinthians, o time teve de jogar a série B do Campeonato Brasileiro. Mas o time se reacendeu com a chegada de um técnico. Quem é ele?`,
-      answers: [
-        {
-          answer: `Adenor Tite`,
-          correct: false,
-        },
-        {
-          answer: `Vanderlei Luxemburgo`,
-          correct: false,
-        },
-        {
-          answer: `Mano Menezes`,
-          correct: true,
-        },
-        {
-          answer: `Andrés Sanchez`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Durante a Copa Libertadores da América de 2012, pela primeira vez na história da competição, o Corinthians conseguiu ser campeão com uma campanha invicta. Qual era o quarteto defensivo da equipe?`,
-      answers: [
-        {
-          answer: `Alessandro, Ralf, Chicão, Fagner`,
-          correct: false,
-        },
-        {
-          answer: `Jorge Henrique, Paulo André, Chicão e Fagner`,
-          correct: false,
-        },
-        {
-          answer: `Fábio Santos, Ralf, Chicão, Fagner`,
-          correct: false,
-        },
-        {
-          answer: `Fábio Santos, Leandro Castán, Chicão e Alessandro`,
-          correct: true,
-        },
-      ],
-    },
-    {
-      question: `Em que ano o Clube foi fundado?`,
-      answers: [
-        {
-          answer: `1913`,
-          correct: false,
-        },
-        {
-          answer: `1910`,
-          correct: true,
-        },
-        {
-          answer: `1951`,
-          correct: false,
-        },
-        {
-          answer: `1932`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Durante o segundo jogo da final do Campeonato Paulista de 1999, o Corinthians empatou com o Palmeiras, sagrando-se campeão da competição. Neste jogo o destaque vai para um jogador, por fazer o gol nos últimos minutos e dar a famosa embaixadinha. Qual é este jogador?`,
-      answers: [
-        {
-          answer: `"Craque" Neto`,
-          correct: false,
-        },
-        {
-          answer: `Vampeta`,
-          correct: false,
-        },
-        {
-          answer: `Marcelinho Carioca`,
-          correct: false,
-        },
-        {
-          answer: `Edílson "Capetinha"`,
-          correct: true,
-        },
-      ],
-    },
-    {
-      question: `Quem foi eleito o melhor jogador da final do Mundial de Clubes FIFA 2012?`,
-      answers: [
-        {
-          answer: `Cássio`,
-          correct: true,
-        },
-        {
-          answer: `Paolo Guerrero`,
-          correct: false,
-        },
-        {
-          answer: `Romarinho`,
-          correct: false,
-        },
-        {
-          answer: `Chicão`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Quem fez o gol de cavadinha no primeiro jogo na final da Libertadores 2012`,
-      answers: [
-        {
-          answer: `Jádson`,
-          correct: false,
-        },
-        {
-          answer: `Romarinho`,
-          correct: true,
-        },
-        {
-          answer: `Roger Guedes`,
-          correct: false,
-        },
-        {
-          answer: `Guerrero`,
-          correct: false,
-        },
-      ],
-    },
-    {
-      question: `Durante a incrível campanha de 2015, o Corinthians se tornou o time com mais pontos na história do Brasileirão de pontos corridos. Quantos pontos?`,
-      answers: [
-        {
-          answer: `90 pontos`,
-          correct: false,
-        },
-        {
-          answer: `77 pontos`,
-          correct: false,
-        },
-        {
-          answer: `80 pontos`,
-          correct: false,
-        },
-        {
-          answer: `81 pontos`,
-          correct: true,
-        },
-      ],
-    },
-  ];
+    var corretasDash = 0;
+    var incorretasDash = 0;
 
-  // substituição do quizz para a primeira pergunta
-  function init() {
-    // criar primeira pergunta
-    createQuestion(0);
-  }
+    // Define o nome do usuário a partir da sessão
+    const b_usuario = document.getElementById('b_usuario');
+    if (sessionStorage.NOME_USUARIO) {
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    } else {
+        b_usuario.innerHTML = 'usuário';
+    }
 
-  // cria uma pergunta
-  function createQuestion(i) {
-    // limpar questão anterior
-    const oldButtons = answerBox.querySelectorAll('button');
-    oldButtons.forEach((btn) => {
-      btn.remove();
-    });
+    var corretas = 0;
+    var incorretas = 0;
 
-    // alterar texto da pergunta
-    const questionText = question.querySelector('#question-text');
-    const questionNumber = question.querySelector('#question-number');
+    function iniciar() {
+        document.getElementById('inicarQuiz').style.display = 'none';
+        document.getElementById('quiz').style.display = 'block';
+    }
 
-    questionText.textContent = questions[i].question;
-    questionNumber.textContent = i + 1;
+    var perguntaAtual = 1;
+    var totalDePerguntas = 10; // Corrigido para o número real de perguntas
 
-    // inserir alternativas
-    questions[i].answers.forEach((answer, i) => {
-      // cria template botão quizz
-      const answerTemplate = document.querySelector('.answer-template').cloneNode(true);
-
-      const letterBtn = answerTemplate.querySelector('.btn-letter');
-      const answerText = answerTemplate.querySelector('.question-answer');
-
-      letterBtn.textContent = letters[i];
-      answerText.textContent = answer['answer'];
-
-      answerTemplate.setAttribute('correct-answer', answer['correct']);
-
-      // remover hide e template class
-      answerTemplate.classList.remove('hide');
-      answerTemplate.classList.remove('answer-template');
-
-      // inserir alternativa na tela
-      answerBox.appendChild(answerTemplate);
-
-      // inserir evento click no botão
-      answerTemplate.addEventListener('click', function () {
-        checkAnswer(this);
-      });
-    });
-
-    // incrementar o número da questão
-    actualQuestion++;
-  }
-
-  // verificar resposta do usuário
-  function checkAnswer(btn) {
-    // seleciona todos os botões
-    const buttons = answerBox.querySelectorAll('button');
-
-    // verifica se resposta correta e add classe
-    buttons.forEach((button) => {
-      if (button.getAttribute('correct-answer') == 'true') {
-        button.classList.add('correct-answer');
-
-        // checa se usuário acertou a pergunta
-        if (btn === button) {
-          // incremento dos pontos
-          points++;
+    function responder(botao, respostaCorreta) {
+        const respostaSelecionada = botao.textContent;
+        if (respostaSelecionada === respostaCorreta) {
+            corretas++;
+        } else {
+            incorretas++;
         }
-      } else {
-        button.classList.add('wrong-answer');
-      }
-    });
+        document.getElementById("pergunta" + perguntaAtual).style.display = "none";
+        if (perguntaAtual < totalDePerguntas) {
+            perguntaAtual++;
+            document.getElementById("pergunta" + perguntaAtual).style.display = "block";
+        } else {
+            mensagem.innerHTML = `<button onclick="finalizar()">Finalizar</button>` //exibirResultados();
+        }
+    }
 
-    // exibir próxima pergunta
-    nextQuestion();
-  }
+    function obterIdUsuario() {
+        return sessionStorage.ID_USUARIO || 'desconhecido';
+    }
 
-  // exibe a pŕoxima pergunta no quizz
-  function nextQuestion() {
-    // timer para usuário ver as respostas
-    setTimeout(function () {
-      // verifica se ainda há perguntas
-      if (actualQuestion >= questions.length) {
-        // apresenta mensagem de sucesso
-        showSuccessMessage();
-        return;
-      }
+    function exibirResultados() {
+        const fk_usuario = obterIdUsuario();
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("resultados").style.display = "block";
 
-      createQuestion(actualQuestion);
-    }, 1200);
-  }
+        const totalRespostas = corretas + incorretas;
+        const media = (corretas / totalRespostas) * 100;
+        document.getElementById("media").textContent = media.toFixed(2) + "%";
 
-  // exibe a tela final
-  function showSuccessMessage() {
-    hideOrShowQuizz();
+        const mediaGeral = 70;
+        if (media >= mediaGeral) {
+            document.getElementById("acimaOuAbaixo").textContent = "acima";
+        } else {
+            document.getElementById("acimaOuAbaixo").textContent = "abaixo";
+        }
 
-    // trocar dados tela de sucesso
-    // calcular score
-    const score = ((points / questions.length) * 100).toFixed(2);
+        var desempenho = '';
+        if (media >= 80) {
+            desempenho = 'Bom';
+        } else if (media >= 50) {
+            desempenho = 'Médio';
+        } else {
+            desempenho = 'Ruim';
+        }
+        document.getElementById("desempenho").textContent = desempenho;
 
-    const displayScore = document.querySelector('#display-score span');
-    displayScore.textContent = score.toString();
+        fetch('/medidas/salvar-resultados', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                acertos: corretas,
+                erros: incorretas,
+                fk_usuario: fk_usuario
+            })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao salvar resultados');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Resultados salvos com sucesso:', data);
+            })
+            .catch(error => {
+                console.error('Erro ao salvar resultados:', error);
+            });
 
-    //alterar o número de perguntas corretas
-    const correctAnswers = document.querySelector('#correct-answers');
-    correctAnswers.textContent = points;
+        // const ctx = document.getElementById('graficoResultados').getContext('2d');
+        // const quizChart = new Chart(ctx, {
+        //     type: 'pie',
+        //     data: {
+        //         labels: ['Respostas Corretas', 'Respostas Incorretas'],
+        //         datasets: [{
+        //             label: 'Quantidade',
+        //             data: [corretas, incorretas],
+        //             backgroundColor: [
+        //                 'rgba(75, 192, 192)',
+        //                 'rgba(255, 99, 132)',
+        //             ],
+        //             borderColor: [
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         }
+        //     }
+        // });
+    }
 
-    // alterar o total de perguntas
-    const totalQuestions = document.querySelector('#questions-qty');
-    totalQuestions.textContent = questions.length;
-  }
+    function voltar() {
+        window.location.href = './dashboard.html';
+    }
 
-  // mostra ou esonde o score
-  function hideOrShowQuizz() {
-    quizzContainer.classList.toggle('hide');
-    scoreContainer.classList.toggle('hide');
-  }
+    function limparSessao() {
+        sessionStorage.clear();
+        window.location.href = '../index.html';
+    }
 
-  // reiniciar quizz
-  const restartBtn = document.querySelector('#restart');
-  restartBtn.addEventListener('click', function () {
-    //zerar jogo
-    actualQuestion = 0;
-    points = 0;
-    hideOrShowQuizz();
-    init();
-  });
+    function finalizar() {
+        var corretasVar = corretas;
+        var incorretasVar = incorretas;
+        // var idUsuario = idUsuario;
 
-  // inicialização do quizz
-  init();
+        fetch("/usuarios/finalizar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                corretasServer: corretasVar,
+                incorretasServer: incorretasVar,
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+            }),
+        })
+        window.location.href = './dashboard.html'
+    }
 
+    // var timeout = setTimeout(function quizSelect() {
+    //     fetch("/usuarios/quizSelect", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             idUsuarioServer: sessionStorage.ID_USUARIO
+    //         })
+    //     }).then(function (resposta) {
+    //         console.log("ESTOU NO THEN DO entrar()!")
+    //         if (resposta.ok) {
+    //             console.log(resposta);
 
-  
+    //             resposta.json().then(json => {
+    //                 console.log(json);
+    //                 console.log(JSON.stringify(json));
+    //                 console.log(json.resultado_Quiz[0])
 
+    //                 var resultado = json.resultado_Quiz[0];
+
+    //                 var certasBD = resultado.certas;
+    //                 var erradasBD = resultado.erradas;
+
+    //                 certasDash = certasBD;
+    //                 erradasDash = erradasBD;
+    //             })
+    //         }
+    //     })
+    // }, 200)
 </script>
