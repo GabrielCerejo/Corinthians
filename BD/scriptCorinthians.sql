@@ -12,14 +12,14 @@ senha varchar(45)
 
 create table pontuacao(
 idPontuacao int primary key auto_increment,
-pontos numeric(2),
-horario datetime
+corretas int,
+incorretas int,
+horario timestamp default current_timestamp,
+fkUsuario int,
+foreign key (fkUsuario) references usuario(idUsuario)
 );
 
-create table usuarioPontuacao (
-idUsuarioPontuacao int primary key auto_increment,
-fkUsuario int,
-fkPontuacao int,
-constraint fkUsuarioUP foreign key (fkUsuario) references usuario(idUsuario),
-constraint fkProntuacaoUP foreign key (fkPontuacao) references pontuacao(idPontuacao)
-);
+select * from usuario;
+select * from pontuacao;
+
+SELECT corretas, incorretas FROM pontuacao WHERE idPontuacao = (SELECT max(idPontuacao) FROM pontuacao WHERE fkUsuario = 1) ORDER BY idPontuacao;

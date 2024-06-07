@@ -24,4 +24,8 @@ router.post("/buscar_quiz", function (req, res) {
     usuarioController.buscar_quiz(req, res);
 });
 
+router.post("/buscar_ultimo", function (req, res) {
+    usuarioController.buscar_ultimo(req, res);
+});
+
 module.exports = router;

@@ -131,4 +131,56 @@ function obterDadosGrafico() {
                 console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
             });
     }
+
+    function plotarGrafico(resposta) {
+        console.log('Iniciando plotagem do gráfico...');
+
+        let labels = ["Corretas                                            |                                         Incorretas"];
+
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Corretas',
+                label: 'Incorretas',
+                data: [resposta[0].corretas, resposta[0].incorretas],
+                backgroundColor: ['blue', 'red'],
+                borderWidth: 1,
+            },
+            // 
+            ]
+        };
+
+        // Configuração do gráfico
+        const config = {
+            type: 'pie',
+            data: dados,
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white' // Cor das legendas
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: 'white' // Cor dos rótulos do eixo X
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: 'white' // Cor dos rótulos do eixo Y
+                        }
+                    }
+                }
+            }
+        };  
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas`),
+            config
+        );
+    }6
 </script>

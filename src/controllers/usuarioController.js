@@ -144,10 +144,28 @@ function buscar_quiz(req, res) {
     });
 }
 
+function buscar_ultimo(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+    const limite_linhas = 1;
+
+    usuarioModel.buscar_ultimo(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     finalizar,
     select_quiz,
-    buscar_quiz
+    buscar_quiz,
+    buscar_ultimo
 }
