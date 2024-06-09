@@ -35,6 +35,18 @@ function finalizar(corretas, incorretas, idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function mostrar_tentativas(idUsuario) {
+
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mostrar_tentativas():", idUsuario);
+
+
+    var instrucaoSql = `
+          SELECT COUNT(idPontuacao) AS Tentativas FROM pontuacao WHERE fkUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function select_quiz(idUsuario) {
 
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function select_quiz():", idUsuario);
@@ -78,5 +90,6 @@ module.exports = {
     finalizar,
     select_quiz,
     buscar_quiz,
-    buscar_ultimo
+    buscar_ultimo,
+    mostrar_tentativas
 };

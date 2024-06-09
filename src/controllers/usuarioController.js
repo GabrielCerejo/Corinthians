@@ -113,6 +113,14 @@ function finalizar(req, res) {
         );
 }
 
+function mostrar_tentativas(req, res){
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.mostrar_tentativas(idUsuario)
+
+    res.json(tentativas);
+}
+
 function select_quiz(req, res) {
     var idUsuario = req.body.idUsuarioServer
 
@@ -161,11 +169,13 @@ function buscar_ultimo(req, res) {
     });
 }
 
+
 module.exports = {
     autenticar,
     cadastrar,
     finalizar,
     select_quiz,
     buscar_quiz,
-    buscar_ultimo
+    buscar_ultimo,
+    mostrar_tentativas
 }

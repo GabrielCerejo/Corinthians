@@ -9,7 +9,6 @@
     <title>Quiz</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/style-quiz.css" />
 
     <script src="../js/sessao.js"></script>
     <!-- <script src="../js/alerta.js"></script> -->
@@ -28,25 +27,25 @@
 
         <div class="header-left dash-header">
 
-            <h1>OnlyBasketball</h1>
+            <h1>BLOG SCCP</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            <div class="btn-nav-white">
+            <div class="btn-nav">
                 <a href="./inicio_dash.html">
-                    <h3>Inicio</h3>
+                    <h3>INTERATIVO</h3>
                 </a>
             </div>
 
-            <div class="btn-nav">
-                <h3>Quiz</h3>
+            <div class="btn-nav-white">
+                <h3>GRÁFICOS</h3>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+                    <h3>FÓRIM SCCP</h3>
                 </a>
             </div>
 
@@ -65,11 +64,24 @@
         <div class="dash">
             <div id="quizContainer">
                 <div id="box">
-                    <div id="inicarQuiz">
+                    <div id="iniciarQuiz">
 
                         <h1>QUIZ SCCP</h1>
-                        <p>Você está prestes a descobrir o seu nível de conhecimento sobre o Corinthians...</p>
+                        <p><br>Você está no QUIZ SCCP. <br>
+                            A seguir, você irá descrobrir o seu nível de conhecimento sobre o Corinthians...<br>
+                            Clique no botão abaixo para iniciar. <br><br>
+                        </p>
                         <button onclick="iniciar()">Iniciar QUIZ</button>
+                        <div class="alternativo">
+                            <p>
+                               <br> <b>OBS: </b>São 15 perguntas de múltipla
+                                escolha, somente para quem realmente entende de Corinthians. <br><br>
+                                Ao final você será redirecionado para uma Dashboard, um gráfico interativo atualizado
+                                dinâmicamente.
+                                <br><br>
+
+                            </p>
+                        </div>
                     </div>
                     <div id="quiz" style="display: none;">
                         <div id="pergunta1" class="pergunta">
@@ -80,35 +92,35 @@
                             <button onclick="responder(this, '2017')">2018</button>
                         </div>
                         <div id="pergunta2" class="pergunta" style="display: none;">
-                            <h2>Quem fez o gol do título paulista em 1977, tirando o Corinthias de um jejum histórico?</h2>
+                            <h2>Quem fez o gol do título paulista em 1977, tirando o Corinthias de um jejum histórico?
+                            </h2>
                             <button onclick="responder(this, 'Basílio')">"Craque" Neto</button>
                             <button onclick="responder(this, 'Basílio')">Basílio</button>
                             <button onclick="responder(this, 'Basílio')">Marcelinho Carioca</button>
                             <button onclick="responder(this, 'Basílio')">Edílson "Capetinha"</button>
                         </div>
                         <div id="pergunta3" class="pergunta" style="display: none;">
-                            <h2>Na partida contra o Vasco da Gama pelas Quartas de Final da Libertadores 2012, Cássio fez uma de suas maiores defesas no Corinthians. Quem chutou para a defesa do Gigante?</h2>
+                            <h2>Na partida contra o Vasco da Gama pelas Quartas de Final da Libertadores 2012, Cássio
+                                fez uma de suas maiores defesas no Corinthians. Quem chutou para a defesa do Gigante?
+                            </h2>
                             <button onclick="responder(this, 'Diego Souza')">Luiz Fabiano</button>
                             <button onclick="responder(this, 'Diego Souza')">Neymar</button>
                             <button onclick="responder(this, 'Diego Souza')">Diego Souza</button>
                             <button onclick="responder(this, 'Diego Souza')">Guerrero</button>
                         </div>
                         <div id="pergunta4" class="pergunta" style="display: none;">
-                            <h2>No Mundial de Clubes de 2000, o Corinthians garantiu sua vaga na final diante do Real Madrid. Neste jogo o Corinthians marcos dois gols. De quem foram esses gols?</h2>
-                            <button
-                                onclick="responder(this, 'Edílson Capetinha')">Marcelinho Carioca</button>
-                            <button
-                                onclick="responder(this, 'Edílson Capetinha')">Vapeta</button>
-                            <button
-                                onclick="responder(this, 'Edílson Capetinha')">Freddy Rincon</button>
-                            <button
-                                onclick="responder(this, 'Edílson Capetinha')">Edílson Capetinha</button>
+                            <h2>No Mundial de Clubes de 2000, o Corinthians garantiu sua vaga na final diante do Real
+                                Madrid. Neste jogo o Corinthians marcos dois gols. De quem foram esses gols?</h2>
+                            <button onclick="responder(this, 'Edílson Capetinha')">Marcelinho Carioca</button>
+                            <button onclick="responder(this, 'Edílson Capetinha')">Vapeta</button>
+                            <button onclick="responder(this, 'Edílson Capetinha')">Freddy Rincon</button>
+                            <button onclick="responder(this, 'Edílson Capetinha')">Edílson Capetinha</button>
                         </div>
                         <div id="pergunta5" class="pergunta" style="display: none;">
                             <h2>Como a torcida do Corinthians é carinhosamente chamada?</h2>
                             <button onclick="responder(this, 'O Bando de Loucos')">Gaviões da Fiel</button>
                             <button onclick="responder(this, 'O Bando de Loucos')">O Bando de Loucos</button>
-                            <button onclick="responder(this, 'O Bando de Loucos')">Trikas/button>
+                            <button onclick="responder(this, 'O Bando de Loucos')">Trikas</button>
                             <button onclick="responder(this, 'O Bando de Loucos')">Porco</button>
                         </div>
                         <div id="pergunta6" class="pergunta" style="display: none;">
@@ -119,32 +131,43 @@
                             <button onclick="responder(this, '1990')">1998</button>
                         </div>
                         <div id="pergunta7" class="pergunta" style="display: none;">
-                            <h2>Durante a participação do Corinthians no Mundial de Clubes FIFA 2012, um jogador do time se destacou marcando dois gols de cabeça, quem é ele?</h2>
+                            <h2>Durante a participação do Corinthians no Mundial de Clubes FIFA 2012, um jogador do time
+                                se destacou marcando dois gols de cabeça, quem é ele?</h2>
                             <button onclick="responder(this, 'Guerrero')">Romarinho</button>
                             <button onclick="responder(this, 'Guerrero')">Guerrero</button>
                             <button onclick="responder(this, 'Guerrero')">Romero</button>
                             <button onclick="responder(this, 'Guerrero')">Emerson Sheik</button>
                         </div>
                         <div id="pergunta8" class="pergunta" style="display: none;">
-                            <h2>Durante a época do Regime Militar no Brasil, um movimento corinthiano a favor da Democracia mudou os rumos do país, trata-se do(a)</h2>
+                            <h2>Durante a época do Regime Militar no Brasil, um movimento corinthiano a favor da
+                                Democracia mudou os rumos do país, trata-se do(a)</h2>
                             <button onclick="responder(this, 'Democracia Corinthiana')">Autistas Alvinegros</button>
                             <button onclick="responder(this, 'Democracia Corinthiana')">Fiel Democracia</button>
                             <button onclick="responder(this, 'Democracia Corinthiana')">Loucos por Democracia</button>
                             <button onclick="responder(this, 'Democracia Corinthiana')">Democracia Corinthiana</button>
                         </div>
                         <div id="pergunta9" class="pergunta" style="display: none;">
-                            <h2>Durante o pior ano da história do Corinthians, o time teve de jogar a série B do Campeonato Brasileiro. Mas o time se reacendeu com a chegada de um técnico. Quem é ele?</h2>
+                            <h2>Durante o pior ano da história do Corinthians, o time teve de jogar a série B do
+                                Campeonato Brasileiro. Mas o time se reacendeu com a chegada de um técnico. Quem é ele?
+                            </h2>
                             <button onclick="responder(this, 'Mano Menezes')">Adenor Tite</button>
                             <button onclick="responder(this, 'Mano Menezes')">Vanderlei Luxemburgo</button>
                             <button onclick="responder(this, 'Mano Menezes')">Mano Menezes</button>
                             <button onclick="responder(this, 'Mano Menezes')">Andrés Sanchez</button>
                         </div>
                         <div id="pergunta10" class="pergunta" style="display: none;">
-                            <h2>Durante a Copa Libertadores da América de 2012, pela primeira vez na história da competição, o Corinthians conseguiu ser campeão com uma campanha invicta. Qual era o quarteto defensivo da equipe?</h2>
-                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Alessandro, Ralf, Chicão, Fagner</button>
-                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Jorge Henrique, Paulo André, Chicão e Fagner</button>
-                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Fábio Santos, Ralf, Chicão, Fagner</button>
-                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Fábio Santos, Leandro Castán, Chicão e Alessandro</button>
+                            <h2>Durante a Copa Libertadores da América de 2012, pela primeira vez na história da
+                                competição, o Corinthians conseguiu ser campeão com uma campanha invicta. Qual era o
+                                quarteto defensivo da equipe?</h2>
+                            <button
+                                onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Alessandro,
+                                Ralf, Chicão, Fagner</button>
+                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Jorge
+                                Henrique, Paulo André, Chicão e Fagner</button>
+                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Fábio
+                                Santos, Ralf, Chicão, Fagner</button>
+                            <button onclick="responder(this, 'Fábio Santos, Leandro Castán, Chicão e Alessandro')">Fábio
+                                Santos, Leandro Castán, Chicão e Alessandro</button>
                         </div>
                         <div id="pergunta11" class="pergunta" style="display: none;">
                             <h2>Em que ano o Clube foi fundado?</h2>
@@ -154,9 +177,12 @@
                             <button onclick="responder(this, '1910')">1932</button>
                         </div>
                         <div id="pergunta12" class="pergunta" style="display: none;">
-                            <h2>Durante o segundo jogo da final do Campeonato Paulista de 1999, o Corinthians empatou com o Palmeiras, sagrando-se campeão da competição. Neste jogo o destaque vai para um jogador, por fazer o gol nos últimos minutos e dar a famosa embaixadinha. Qual é este jogador?</h2>
+                            <h2>Durante o segundo jogo da final do Campeonato Paulista de 1999, o Corinthians empatou
+                                com o Palmeiras, sagrando-se campeão da competição. Neste jogo o destaque vai para um
+                                jogador, por fazer o gol nos últimos minutos e dar a famosa embaixadinha. Qual é este
+                                jogador?</h2>
                             <button onclick="responder(this, 'Edílson Capetinha')">Craque Neto</button>
-                            <button onclick="responder(this, 'Edílson Capetinha')">Vampeta/button>
+                            <button onclick="responder(this, 'Edílson Capetinha')">Vampeta</button>
                             <button onclick="responder(this, 'Edílson Capetinha')">Marcelinho Carioca</button>
                             <button onclick="responder(this, 'Edílson Capetinha')">Edílson Capetinha</button>
                         </div>
@@ -175,7 +201,8 @@
                             <button onclick="responder(this, 'Romarinho')">Guerrero</button>
                         </div>
                         <div id="pergunta15" class="pergunta" style="display: none;">
-                            <h2>Durante a incrível campanha de 2015, o Corinthians se tornou o time com mais pontos na história do Brasileirão de pontos corridos. Quantos pontos?</h2>
+                            <h2>Durante a incrível campanha de 2015, o Corinthians se tornou o time com mais pontos na
+                                história do Brasileirão de pontos corridos. Quantos pontos?</h2>
                             <button onclick="responder(this, '81 pontos')">90 pontos</button>
                             <button onclick="responder(this, '81 pontos')">77 pontos</button>
                             <button onclick="responder(this, '81 pontos')">80 pontos</button>
@@ -198,6 +225,7 @@
         </div>
     </div>
 </body>
+
 </html>
 <script>
 
@@ -216,12 +244,12 @@
     var incorretas = 0;
 
     function iniciar() {
-        document.getElementById('inicarQuiz').style.display = 'none';
+        document.getElementById('iniciarQuiz').style.display = 'none';
         document.getElementById('quiz').style.display = 'block';
     }
 
     var perguntaAtual = 1;
-    var totalDePerguntas = 10; // Corrigido para o número real de perguntas
+    var totalDePerguntas = 15; // Corrigido para o número real de perguntas
 
     function responder(botao, respostaCorreta) {
         const respostaSelecionada = botao.textContent;

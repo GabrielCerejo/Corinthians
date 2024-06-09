@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaTech | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
@@ -32,7 +32,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AquaTech</h1>
+            <h1>BLOG SCCP</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -82,15 +82,17 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-let proximaAtualizacao;
+    let proximaAtualizacao;
 
-window.onload = exibirQuizDosUsuarios();
+    window.onload = exibirQuizDosUsuarios();
 
-function exibirQuizDosUsuarios() {
-    document.getElementById("graficos").innerHTML += `
+    function exibirQuizDosUsuarios() {
+        document.getElementById("graficos").innerHTML += `
     <div id="grafico">
         <h3 class="tituloGraficos">
-            <span id="tituloGrafico">Seu resultado praiano</span>
+            <span id="tituloGrafico" style="color: white">
+                Usuário tentou: <span id="b_tentativas">X<span> vezes.
+                <br>Seu resultado</span>
         </h3>
         <div class="graph">
             <canvas id="myChartCanvas"></canvas>
@@ -101,10 +103,25 @@ function exibirQuizDosUsuarios() {
     </div>
 `;
 
-    obterDadosGrafico();
-}
+        obterDadosGrafico();
+    }
 
-function obterDadosGrafico() {
+    // function tentativas() {
+    //     fetch(`/usuarios/mostrar_tentativas/`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             data: [Tentativas[0].tentativas]
+    //         })
+    //     })
+
+    //     obterDadosGrafico();
+
+    // }
+
+    function obterDadosGrafico() {
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
@@ -116,7 +133,7 @@ function obterDadosGrafico() {
             },
             body: JSON.stringify({
                 idUsuarioServer: sessionStorage.ID_USUARIO
-            })  
+            })
         }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
@@ -146,7 +163,7 @@ function obterDadosGrafico() {
                 backgroundColor: ['blue', 'red'],
                 borderWidth: 1,
             },
-            // 
+                // 
             ]
         };
 
@@ -175,12 +192,12 @@ function obterDadosGrafico() {
                     }
                 }
             }
-        };  
+        };
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
             document.getElementById(`myChartCanvas`),
             config
         );
-    }6
+    } 6
 </script>

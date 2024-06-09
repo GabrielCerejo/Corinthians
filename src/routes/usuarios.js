@@ -16,7 +16,7 @@ router.post("/finalizar", function (req, res) {
     usuarioController.finalizar(req, res);
 });
 
-router.post("/slect_quiz", function (req, res) {
+router.post("/select_quiz", function (req, res) {
     usuarioController.select_quiz(req, res);
 });
 
@@ -26,6 +26,10 @@ router.post("/buscar_quiz", function (req, res) {
 
 router.post("/buscar_ultimo", function (req, res) {
     usuarioController.buscar_ultimo(req, res);
+});
+
+router.post("/mostrar_tentativas", function (req, res) {
+    usuarioController.mostrar_tentativas(req, res);
 });
 
 module.exports = router;

@@ -149,6 +149,14 @@ body {
   background-color: #161618;
   height: 100vh;
   overflow: auto;
+  align-items: center;
+}
+
+.dash h1 {
+  font-family: 'corinthians';
+  color: rgb(255, 115, 0);
+  font-weight: lighter;
+
 }
 
 .area-parametros-alerta {
@@ -321,6 +329,10 @@ canvas {
   font-size: large;
 }
 
+.btn-nav h3 {
+  color: black;
+}
+
 
 
 
@@ -368,6 +380,10 @@ canvas {
 .btn-nav-white:hover h3 {
   width: 100%;
   color: black;
+}
+
+.btn-nav-white h3 {
+  color: white;
 }
 
 .btn-logout h3 {
@@ -596,6 +612,76 @@ canvas {
 }
 
 #form_postagem button:hover::before {
+  width: 100%;
+  color: black
+}
+
+#iniciarQuiz {
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  border: 5px groove #000;
+  margin: 10vh;
+  border-radius: 20px;
+}
+
+#iniciarQuiz p {
+  color: white;
+  background-color: #212124;
+  font-size: 25px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#iniciarQuiz h1 {
+  font-size: 60px;
+}
+
+.alternativo p{
+  font-size: small;
+}
+
+#iniciarQuiz button {
+  height: 45px;
+  width: 250px;
+  font-family: 'corinthians';
+  font-weight: lighter;
+  font-size: x-large;
+  background-color: #212124;
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 2px double rgb(255, 255, 255);
+  padding: auto 15px 15px auto;
+  gap: 5px;
+  transition: all 250ms;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin: 20px;
+}
+
+#iniciarQuiz button:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 115, 0);
+  border: 2px double rgb(255, 115, 0);
+}
+
+#iniciarQuiz button::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: black;
+  z-index: -1;
+  color: rgb(255, 115, 0);
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 500ms;
+}
+
+#iniciarQuiz button:hover::before {
   width: 100%;
   color: black
 }
