@@ -152,7 +152,7 @@
     function plotarGrafico(resposta) {
         console.log('Iniciando plotagem do gráfico...');
 
-        let labels = ["Corretas                                            |                                         Incorretas"];
+        let labels = ["Corretas", "Incorretas"];
 
         let dados = {
             labels: labels,
@@ -160,7 +160,7 @@
                 label: 'Corretas',
                 label: 'Incorretas',
                 data: [resposta[0].corretas, resposta[0].incorretas],
-                backgroundColor: ['blue', 'red'],
+                backgroundColor: ['#', 'white'],
                 borderWidth: 1,
             },
                 // 
