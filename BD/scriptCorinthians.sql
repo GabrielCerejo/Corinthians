@@ -19,7 +19,19 @@ fkUsuario int,
 foreign key (fkUsuario) references usuario(idUsuario)
 );
 
+create table aviso (
+	id int primary key auto_increment,
+	titulo varchar(100),
+	descricao varchar(250),
+	fk_usuario int,
+	foreign key (fk_usuario) references usuario(idUsuario)
+);
+
 select * from usuario;
 select * from pontuacao;
+select * from aviso;
+show tables;
 
 SELECT corretas, incorretas FROM pontuacao WHERE idPontuacao = (SELECT max(idPontuacao) FROM pontuacao WHERE fkUsuario = 1) ORDER BY idPontuacao;
+
+select count(idPontuacao) from pontuacao where fkUsuario = 1;
