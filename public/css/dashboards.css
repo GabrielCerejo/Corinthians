@@ -25,9 +25,9 @@ body {
 }
 
 .dash-right .avisos .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .container h1 {
@@ -56,6 +56,17 @@ body {
 .dash-right .avisos .div-form input {
   width: 95%;
   border-radius: 5px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.dash-right .avisos .div-form input:hover{
+  border: 2px solid rgb(255, 115, 0);
+}
+
+.dash-right .avisos .div-form input:focus{
+  outline: none;
+  box-shadow: 0 0 5px rgb(255, 115, 0);
 }
 
 .dash-right .avisos .div-form textarea {
@@ -72,33 +83,98 @@ body {
 .dash-right .avisos .div-form textarea:focus {
   outline: none;
   box-shadow: 0 0 5px rgb(255, 115, 0);
-  /* Laranja */
 }
 
-.dash-right .avisos .div-form button {
-  cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+.div-form button {
   width: 120px;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 3px;
+  border: 2px double rgb(0, 0, 0);
+  /* padding: auto 15px 15px auto; */
+  gap: 5px;
+  transition: all 250ms;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  align-items: baseline;
+}
+
+.div-form button:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 115, 0);
+  border: 2px double rgb(255, 115, 0);
+}
+
+.div-form button::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: black;
+  z-index: -1;
+  color: rgb(255, 115, 0);
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 500ms;
+}
+
+.div-form button:hover::before {
+  width: 100%;
+  color: black
 }
 
 .publicacao-btn-editar {
-  cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: white;
-  background-color: #e6005a;
   width: 80px;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 3px;
+  border: 2px double rgb(0, 0, 0);
+  /* padding: auto 15px 15px auto; */
+  gap: 5px;
+  transition: all 250ms;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin: 10px;
+  text-align: center;
+}
+
+.publicacao-btn-editar:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 115, 0);
+  border: 2px double rgb(255, 115, 0);
+}
+
+.publicacao-btn-editar::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: black;
+  z-index: -1;
+  color: rgb(255, 115, 0);
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 500ms;
+}
+
+.publicacao-btn-editar:hover::before {
+  width: 100%;
+  color: black
 }
 
 .publicacao {
@@ -108,7 +184,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px double rgb(255, 115, 0);
   padding: 20px;
 }
 
@@ -255,9 +331,9 @@ body {
 }
 
 canvas {
-  width: 60% !important;
-  height: 40% !important;
-  margin-left: 15vw;
+  width: 600px !important;
+  height: 500px !important;
+  margin-left: 20vw;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -292,7 +368,7 @@ canvas {
 
 .dash-right {
   display: flex;
-  width: 70%;
+  width: 75%;
   height: fit-content;
   background-color: #161618;
   position: relative;
@@ -448,7 +524,10 @@ canvas {
 
 .titulo {
   align-items: center;
-  /* background-color: rgb(255, 115, 0); */
+}
+
+.titulo input{
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .cards {
@@ -567,10 +646,11 @@ canvas {
 }
 
 .divisoria {
-  width: 100%;
+  width: 90%;
   height: 0.1px;
   background-color: rgb(255, 115, 0);
   margin-top: 30px;
+  align-items: center;
 }
 
 
@@ -761,15 +841,3 @@ canvas {
   align-items: center;
 }
 
-body::-webkit-scrollbar {
-  width: 5px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #222222;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 115, 0);
-  border-radius: 20px;
-}

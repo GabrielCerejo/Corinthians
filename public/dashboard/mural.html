@@ -2,14 +2,13 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./../css/IMG/simboloc.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <title>BLOG SCCP | Fórum SCCP</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -20,8 +19,6 @@
 </head>
 
 <body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
-
-    <div class="janela">
 
 
         <div class="header-left">
@@ -66,20 +63,15 @@
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                                <h2>Escolha um tema para opinar:</h2>
-                                <select name="" id="select_tema">
-                                    <option value="0" disabled selected>Selecione um tema</option>
-                                    <option value="1"><b id="chamativo">Bastidores</b> | A saída de Cássio</option>
-                                    <option value="2"><b id="chamativo">Bastidores</b> | A saída de Paulinho</option>
-                                    <option value="3"><b id="chamativo">Jogadores</b> | A grande partida de Igor Coronado</option>
-                                    <option value="4"><b id="chamativo">Sulamericana</b> | Classificação com vitória</option>
-                                    <option value="5"><b id="chamativo">Brasileirão</b> | Derrota para o Botafogo</option>
-                                </select>
+                                <h2>Escreva um tema para opinar:</h2>
+                                <br>
+                                <input name="titulo" id="titulo" maxlength="100" type="text" placeholder="Digite um tema de no máximo 100 linhas...">
                             </label>
                             <br>
                             <br>
                             <label>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" placeholder="Digite aqui a sua opinião (máximo 250 caracteres)"></textarea>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"
+                                    placeholder="Digite aqui a sua opinião (máximo 250 caracteres)"></textarea>
                             </label>
                             <br>
                             <br>
@@ -87,7 +79,7 @@
                         </form>
                     </div>
                     <div class="divisoria"></div>
-                    <h1>Mural de Avisos</h1>
+                    <h1>Mural de Mensagens</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
@@ -95,7 +87,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -105,7 +96,7 @@
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
@@ -249,7 +240,7 @@
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
     }
 
