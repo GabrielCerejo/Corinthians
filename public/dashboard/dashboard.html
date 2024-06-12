@@ -96,18 +96,21 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
-        if (resposta.ok) {
-        console.log(resposta);
-        resposta.json().then(json => {
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
                     console.log(json.resposta[0].Tentativas)
                     var tentativas_auxilio = json.resposta[0];
-                    tentativasvar = tentativas_auxilio           
-                })}})};
-     
-                
-var timeout1 = setTimeout(function exibirQuizDosUsuarios() {
+                    tentativasvar = tentativas_auxilio
+                })
+            }
+        })
+    };
+
+
+    var timeout1 = setTimeout(function exibirQuizDosUsuarios() {
         document.getElementById("graficos").innerHTML += `
     <div id="grafico">
         <h3 class="tituloGraficos">
@@ -123,9 +126,9 @@ var timeout1 = setTimeout(function exibirQuizDosUsuarios() {
         </div>
     </div>
 `;
-    obterDadosGrafico();
-    } 
-,200)
+        obterDadosGrafico();
+    }
+        , 200)
 
     function obterDadosGrafico() {
         if (proximaAtualizacao != undefined) {

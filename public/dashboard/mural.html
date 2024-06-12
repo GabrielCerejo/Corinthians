@@ -21,72 +21,73 @@
 <body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
 
 
-        <div class="header-left">
+    <div class="header-left">
 
-            <h1>BLOG SCCP</h1>
+        <h1>BLOG SCCP</h1>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>INTERATIVO</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>GRÁFICOS</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>FÓRUM SCCP</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
 
-        <div class="dash-right">
+        <div class="btn-nav-white">
+            <a href="cards.html">
+                <h3>INTERATIVO</h3>
+            </a>
+        </div>
+
+        <div class="btn-nav-white">
+            <a href="./dashboard.html">
+                <h3>GRÁFICOS</h3>
+            </a>
+        </div>
+
+        <div class="btn-nav">
+            <h3>FÓRUM SCCP</h3>
+        </div>
+
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
+
+    </div>
+
+    <div class="dash-right">
 
 
-            <div class="avisos">
-                <div id="alerta">
+        <div class="avisos">
+            <div id="alerta">
+            </div>
+            <div class="container">
+                <h1>Seja bem-vindo ao Forum SCCP</h1>
+                <div class="divisoria"></div>
+                <div class="div-form">
+                    <form id="form_postagem" method="post" onsubmit="return publicar()">
+                        <label>
+                            <h2>Escreva um tema para opinar:</h2>
+                            <br>
+                            <input name="titulo" id="titulo" maxlength="100" type="text"
+                                placeholder="Digite um tema de no máximo 100 linhas...">
+                        </label>
+                        <br>
+                        <br>
+                        <label>
+                            <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"
+                                placeholder="Digite aqui a sua opinião (máximo 250 caracteres)"></textarea>
+                        </label>
+                        <br>
+                        <br>
+                        <button>Enviar</button>
+                    </form>
                 </div>
-                <div class="container">
-                    <h1>Seja bem-vindo ao Forum SCCP</h1>
-                    <div class="divisoria"></div>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                <h2>Escreva um tema para opinar:</h2>
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text" placeholder="Digite um tema de no máximo 100 linhas...">
-                            </label>
-                            <br>
-                            <br>
-                            <label>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"
-                                    placeholder="Digite aqui a sua opinião (máximo 250 caracteres)"></textarea>
-                            </label>
-                            <br>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <div class="divisoria"></div>
-                    <h1>Mural de Mensagens</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
+                <div class="divisoria"></div>
+                <h1>Mural de Mensagens</h1>
+                <div class="div-results">
+                    <div id="feed_container" class="feed-container">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
