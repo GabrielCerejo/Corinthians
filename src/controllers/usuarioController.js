@@ -115,11 +115,12 @@ function finalizar(req, res) {
 
 function mostrar_tentativas(req, res){
     var idUsuario = req.body.idUsuarioServer;
-
     usuarioModel.mostrar_tentativas(idUsuario)
-
-    res.json(tentativas);
-}
+    .then(function (resposta) {
+        res.json({
+            resposta
+        });
+})}
 
 function select_quiz(req, res) {
     var idUsuario = req.body.idUsuarioServer

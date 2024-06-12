@@ -28,7 +28,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
+<body onload="tentativas(), timeout1">
 
     <div class="janela">
         <div class="header-left">
@@ -80,19 +80,40 @@
 </html>
 
 <script>
+    var tentativasvar = 0
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;
 
-    window.onload = exibirQuizDosUsuarios();
-
-    function exibirQuizDosUsuarios() {
+    function tentativas() {
+        fetch(`/usuarios/mostrar_tentativas/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+        if (resposta.ok) {
+        console.log(resposta);
+        resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    console.log(json.resposta[0].Tentativas)
+                    var tentativas_auxilio = json.resposta[0];
+                    tentativasvar = tentativas_auxilio           
+                })}})};
+     
+                
+var timeout1 = setTimeout(function exibirQuizDosUsuarios() {
         document.getElementById("graficos").innerHTML += `
     <div id="grafico">
         <h3 class="tituloGraficos">
             <span id="tituloGrafico" style="color: white">
-                Usuário tentou: <span id="b_tentativas">i<span> vezes.
-                <br>Seu resultado</span>
+                Usuário tentou: <span id=>${tentativasvar.Tentativas}<span> vezes.
+                <br>Seu resultado na última tentativa</span>
         </h3>
         <div class="graph">
             <canvas id="myChartCanvas"></canvas>
@@ -102,24 +123,9 @@
         </div>
     </div>
 `;
-
-        obterDadosGrafico();
-    }
-
-    // function tentativas() {
-    //     fetch(`/usuarios/mostrar_tentativas/`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             data: [Tentativas[0].tentativas]
-    //         })
-    //     })
-
-    //     obterDadosGrafico();
-
-    // }
+    obterDadosGrafico();
+    } 
+,200)
 
     function obterDadosGrafico() {
         if (proximaAtualizacao != undefined) {
